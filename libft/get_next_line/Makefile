@@ -5,16 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/24 18:59:58 by adi-nata          #+#    #+#              #
-#    Updated: 2023/02/24 19:14:22 by adi-nata         ###   ########.fr        #
+#    Created: 2023/02/24 18:59:38 by adi-nata          #+#    #+#              #
+#    Updated: 2023/02/24 18:59:39 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-all:
-		make -C ./ft_printf/
-		make -C ./srcs/
-
-fclean:
-		make fclean -C ./ft_printf/
-		make fclean -C ./srcs/

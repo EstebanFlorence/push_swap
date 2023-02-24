@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/14 09:30:07 by adi-nata          #+#    #+#              #
-#    Updated: 2023/01/29 19:48:25 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/02/24 19:10:24 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,6 @@ RM	= rm -f
 		${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-	cd ../ && ${MAKE}
 	ar rcs ${NAME} ${OBJS}
 
 
@@ -47,7 +46,6 @@ bonus:		all
 
 clean:
 			${RM} ${OBJS}
-			cd ../ && ${MAKE} clean
 
 fclean:		clean
 			${RM} ${NAME}

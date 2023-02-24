@@ -6,11 +6,9 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/02/23 17:42:31 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/02/24 17:18:06 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -20,21 +18,10 @@
 
 typedef struct s_push
 {
-	int				content;
+	int				nbr;
+	struct s_push	*prev;
 	struct s_push	*next;
 }	t_push;
-
-typedef struct s_moves
-{
-	int	ra;
-	int	rb;
-	int	rr;
-	int	rra;
-	int	rrb;
-	int	rrr;
-	int	res;
-}	t_moves;
-
 
 
 
