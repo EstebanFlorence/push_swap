@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/10 18:13:54 by adi-nata          #+#    #+#              #
-#    Updated: 2023/02/25 16:35:16 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/02/27 18:16:05 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ bonusclean:		clean
 						cd bonus && ${MAKE} clean
 
 fclean:			clean
-						@ {RM} ${NAME}
+						@ ${RM} ${NAME}
 						@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary ✔️"
 
 bonusfclean:	fclean

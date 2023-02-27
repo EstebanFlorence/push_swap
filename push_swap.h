@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/02/24 17:18:06 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/02/27 16:12:08 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-typedef struct s_push
+typedef struct s_stack
 {
 	int				nbr;
-	struct s_push	*prev;
-	struct s_push	*next;
-}	t_push;
+	struct s_stack	*prev;
+	struct s_stack	*next;
+}	t_stack;
 
 
 
