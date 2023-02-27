@@ -6,12 +6,14 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/10 18:13:54 by adi-nata          #+#    #+#              #
-#    Updated: 2023/02/10 19:08:43 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/02/25 16:35:16 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
+
 CC		= cc
+
 FLAGS	= -Wall -Wextra -Werror
 
 SRCS	= push_swap.c
@@ -38,6 +40,7 @@ ${NAME}:	${OBJS}
 			@echo "${GREEN}${NAME} created [0m ✔️"
 
 all:		${NAME}
+						make -C ./libft/
 
 bonus:			all
 						cd bonus && ${MAKE}
