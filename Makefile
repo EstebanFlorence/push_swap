@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/10 18:13:54 by adi-nata          #+#    #+#              #
-#    Updated: 2023/02/27 18:16:05 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/02/28 15:24:43 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ bonus:			all
 
 clean:
 						@ ${RM} *.o */*.o */*/*.o
+						make clean -C ./libft/
 						@ echo "${RED}Deleting ${CYAN}${NAME} ${CLR_RMV}objs ✔️"
 
 bonusclean:		clean
@@ -54,6 +55,7 @@ bonusclean:		clean
 
 fclean:			clean
 						@ ${RM} ${NAME}
+						make fclean -C ./libft/
 						@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary ✔️"
 
 bonusfclean:	fclean

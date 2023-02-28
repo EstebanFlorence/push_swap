@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/02/27 18:06:43 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:38:35 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,16 +101,16 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
-	// if (ac > 1)
-	// {
-	// 	if (ac == 3)
-	// 		ft_solve2(a);
-	// }
 	ft_stackinit(ac, av, &a);
-	while (a)
+	if (ac > 1)
+	{
+		if (ac == 3)
+			ft_solve2(a);
+	}
+	/*while (a)
 	{
 		printf("%d\n", a->nbr);
 		a = a->next;
-	}
+	}*/
 
 }
