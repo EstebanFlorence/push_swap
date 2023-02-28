@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/02/28 16:38:35 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/02/28 17:14:37 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,6 @@ void	ft_stackinit(int ac, char **av, t_stack **push)
 	}
 }
 
-void	ft_solve2(t_stack *a)
-{
-	(void)a;
-}
-
 int	ft_minimum(t_stack *push)
 {
 	int	min;
@@ -92,7 +87,10 @@ int	ft_minimum(t_stack *push)
 	return (min);
 }
 
-#include <stdio.h>
+void	ft_solve2(t_stack *a)
+{
+	(void)a;
+}
 
 int	main(int ac, char **av)
 {
@@ -112,5 +110,5 @@ int	main(int ac, char **av)
 		printf("%d\n", a->nbr);
 		a = a->next;
 	}*/
-
+	return (0);
 }
