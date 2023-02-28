@@ -6,9 +6,11 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/24 18:58:26 by adi-nata          #+#    #+#              #
-#    Updated: 2023/02/24 19:03:51 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/02/28 15:05:47 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+NAME	= ../include/libft.a
 
 SRC	= ft_isalpha.c\
 		ft_isdigit.c\
@@ -61,8 +63,6 @@ SRCB	=	ft_lstnew.c\
 OBJS	= ${SRC:.c=.o}
 
 OBJSB	= ${SRCB:.c=.o}
-
-NAME	= ../include/libft.a
 
 CC	= gcc
 

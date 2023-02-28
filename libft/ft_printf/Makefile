@@ -6,11 +6,11 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/14 09:30:07 by adi-nata          #+#    #+#              #
-#    Updated: 2023/02/24 19:10:24 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/02/28 15:06:20 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libftprintf.a
+NAME	= ../include/libftprintf.a
 
 SRCS	=	sources/ft_printf.c\
 				sources/syntax.c\
