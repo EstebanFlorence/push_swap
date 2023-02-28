@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/02/28 16:58:00 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/02/28 18:21:48 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include "libft/include/libft.h"
 
 typedef struct s_stack
 {

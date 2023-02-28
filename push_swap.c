@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/02/28 17:14:37 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/02/28 18:12:51 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ft_stackinit(int ac, char **av, t_stack **push)
 	i = 1;
 	while (i < ac)
 	{
-		ft_lstadd_back(push, ft_lstnew(atoi(av[i])));
+		ft_lstadd_back(push, ft_lstnew(ft_atoi(av[i])));
 		i++;
 	}
 }
@@ -100,15 +100,15 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	ft_stackinit(ac, av, &a);
-	if (ac > 1)
+	/*if (ac > 1)
 	{
 		if (ac == 3)
 			ft_solve2(a);
-	}
-	/*while (a)
+	}*/
+	while (a)
 	{
 		printf("%d\n", a->nbr);
 		a = a->next;
-	}*/
+	}
 	return (0);
 }
