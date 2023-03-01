@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/10 18:13:54 by adi-nata          #+#    #+#              #
-#    Updated: 2023/02/28 15:24:43 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/01 16:14:08 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ CC		= cc
 
 FLAGS	= -Wall -Wextra -Werror
 
-SRCS	= push_swap.c
+SRCS	= push_swap.c\
+			utils.c
 
 OBJS	= ${SRCS:.c=.o}
 
