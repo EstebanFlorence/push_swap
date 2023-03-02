@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/02 11:32:12 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/02 18:54:40 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@ void	ft_stackinit(int ac, char **av, t_stack **push)
 	}
 }
 
-int	ft_minimum(t_stack *push)
+int	ft_minimum(t_stack *stack)
 {
 	int	min;
 
-	min = push->nbr;
-	while (push)
+	min = stack->nbr;
+	while (stack)
 	{
-		if (push->nbr < min)
-			min = push->nbr;
-		push = push->next;
+		if (stack->nbr < min)
+			min = stack->nbr;
+		stack = stack->next;
 	}
 	return (min);
 }
@@ -43,11 +43,11 @@ int	ft_minimum(t_stack *push)
 	
 }*/
 
-/*void	ft_solve2(t_stack *push)
+void	ft_solve2(t_stack *stack)
 {
-	if (push->nbr != ft_minimum(push))
-
-}*/
+	if (stack->nbr != ft_minimum(stack))
+		write (1, "ok", 2);
+}
 
 int	main(int ac, char **av)
 {
@@ -60,11 +60,9 @@ int	main(int ac, char **av)
 	size = 0;
 	ft_stackinit(ac, av, &a);
 	size = ft_lstsize(a);
-	if (ac > 1)
-	{
-		if (ac == 3)
-			ft_solve2(a);
-	}
+	if (size == 2)
+		ft_solve2(a);
+	
 	/*while (a)
 	{
 		printf("%d\n", a->nbr);
