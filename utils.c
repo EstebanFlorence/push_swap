@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:13:09 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/02 11:32:25 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/02 19:18:23 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,14 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 	}
 }
 
-int		ft_lstsize(t_stack *push)
+int		ft_lstsize(t_stack *stack)
 {
 	int	i;
 
 	i = 0;
-	while (push)
+	while (stack)
 	{
-		push = push->next;
+		stack = stack->next;
 		i++;
 	}
 	return (i);
