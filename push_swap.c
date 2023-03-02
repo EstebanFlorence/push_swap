@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/01 16:13:47 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/02 11:32:12 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,28 @@ int	ft_minimum(t_stack *push)
 	return (min);
 }
 
-void	ft_solve2(t_stack *a)
+/*void	rarb(t_stack **push)
 {
-	(void)a;
-}
+	
+}*/
+
+/*void	ft_solve2(t_stack *push)
+{
+	if (push->nbr != ft_minimum(push))
+
+}*/
 
 int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
+	int		size;
 
 	a = NULL;
 	b = NULL;
+	size = 0;
 	ft_stackinit(ac, av, &a);
+	size = ft_lstsize(a);
 	if (ac > 1)
 	{
 		if (ac == 3)
