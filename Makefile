@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/10 18:13:54 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/01 16:14:08 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/03 19:37:25 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,11 @@ NAME	= push_swap
 
 CC		= cc
 
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror -I${INC_DIR}
 
-SRCS	= push_swap.c\
+INC_DIR	= ./libft/include
+
+SRCS	= push_swap.c \
 			utils.c
 
 OBJS	= ${SRCS:.c=.o}
@@ -40,7 +42,7 @@ ${NAME}:	${OBJS}
 			${CC} ${FLAGS} -o ${NAME} ${OBJS}
 			@echo "${GREEN}${NAME} created [0m ✔️"
 
-all:		${NAME}
+all:		${NAME}					
 						make -C ./libft/
 
 bonus:			all

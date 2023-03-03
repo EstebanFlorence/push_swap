@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/02 22:16:29 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/03 16:26:34 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_minimum(t_stack *stack)
 	return (min);
 }
 
-void	ft_rarb(t_stack **stack)
+void	ft_rarb(t_stack **stack, char c)
 {
 	t_stack	*tmp;
 	t_stack	*rot;
@@ -53,14 +53,17 @@ void	ft_rarb(t_stack **stack)
 		tmp->next = rot;
 		rot->next = NULL;
 		rot->prev = tmp;
-		
+		if (c == 'a')
+			write(1, "ra", 2);
+		else
+			write(1, "rb", 2);
 	}
 }
 
 void	ft_solve2(t_stack *stack)
 {
 	if (stack->nbr != ft_minimum(stack))
-		ft_rarb(&stack);
+		ft_rarb(&stack, 'a');
 }
 
 int	main(int ac, char **av)

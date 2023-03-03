@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:02:14 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/02/28 18:31:15 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/03 19:07:10 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char				*ft_strtrim(const char *s1, const char *set);
 char				*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char				**ft_split(const char *s, char c);
 
-int					ft_atoi(const char *str);
+int					ft_atoi(const char *nptr);
 char				*ft_itoa(int n);
 
 int					ft_toupper(int c);
