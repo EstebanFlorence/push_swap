@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/14 09:30:07 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/06 11:18:16 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/06 12:08:22 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ OBJS	=	${SRCS:.c=.o}
 
 CC	= gcc
 
-FLAGS	= -Wall -Wextra -Werror -I ../include
+FLAGS	= -Wall -Wextra -Werror -I../include
 
 RM	= rm -f
 

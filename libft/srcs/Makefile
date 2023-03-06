@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/24 18:58:26 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/05 23:41:06 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/06 12:08:30 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,7 @@ CC	= gcc
 
 RM	= rm -f
 
-FLAGS	= -Wall -Wextra -Werror -I ../include
+FLAGS	= -Wall -Wextra -Werror -I../include
 
 .c.o:
 		${CC} ${FLAGS} -c $< -o ${<:.c=.o}
