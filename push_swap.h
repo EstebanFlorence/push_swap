@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/06 21:13:09 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/06 23:13:14 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int			ft_lstsize(t_stack *stack);
 
 //	MOVES
 
+void		sasb(t_stack *stack, char c);
 void		rarb(t_stack **stack, char c);
 void		rrarrb(t_stack **stack, char c);
 void		papb(t_stack **a, t_stack **b, char c);

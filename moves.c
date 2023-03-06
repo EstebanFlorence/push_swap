@@ -6,11 +6,26 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:14:19 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/06 21:14:35 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/06 23:15:36 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	sasb(t_stack *stack, char c)
+{
+	int	swap;
+
+	if (stack == NULL || stack->next == NULL)
+		return ;
+	swap = stack->nbr;
+	stack->nbr = stack->next->nbr;
+	stack->next->nbr = swap;
+	if (c == 'a')
+		ft_printf("sa\n");
+	else
+		ft_printf("sb\n");
+}
 
 void	rarb(t_stack **stack, char c)
 {
@@ -41,6 +56,8 @@ void	rrarrb(t_stack **stack, char c)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
+	tmp = *stack;
+	rot = *stack;
 	while (tmp->next)
 	{
 		rot = tmp;
