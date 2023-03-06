@@ -6,20 +6,20 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/03 16:26:34 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/06 21:14:14 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_stackinit(int ac, char **av, t_stack **push)
+void	ft_stackinit(int ac, char **av, t_stack **stack)
 {
 	int i;
 
 	i = 1;
 	while (i < ac)
 	{
-		ft_lstadd_back(push, ft_lstnew(ft_atoi(av[i])));
+		ft_lstadd_back(stack, ft_lstnew(ft_atoi(av[i])));
 		i++;
 	}
 }
@@ -38,52 +38,48 @@ int	ft_minimum(t_stack *stack)
 	return (min);
 }
 
-void	ft_rarb(t_stack **stack, char c)
-{
-	t_stack	*tmp;
-	t_stack	*rot;
-
-	if ((*stack)->nbr)
-	{
-		tmp = *stack;
-		rot = *stack;
-		while (tmp->next)
-			tmp = tmp->next;
-		*stack = (*stack)->next;
-		tmp->next = rot;
-		rot->next = NULL;
-		rot->prev = tmp;
-		if (c == 'a')
-			write(1, "ra", 2);
-		else
-			write(1, "rb", 2);
-	}
-}
-
 void	ft_solve2(t_stack *stack)
 {
 	if (stack->nbr != ft_minimum(stack))
-		ft_rarb(&stack, 'a');
+		rarb(&stack, 'a');
+}
+
+void	ft_solve3(t_stack *a, t_stack *b)
+{
+	papb(&a, &b, 'b');
 }
 
 int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
+/* 	t_stack	*tmp;
+	t_stack	*tmp2; */
 	int		size;
 
 	a = NULL;
 	b = NULL;
+/* 	tmp = NULL;
+	tmp2 = NULL; */
+
 	size = 0;
 	ft_stackinit(ac, av, &a);
 	size = ft_lstsize(a);
+/* 	tmp = a;
+	while (tmp)
+	{
+		ft_printf("%d\n", tmp->nbr);
+		tmp = tmp->next;
+	} */
 	if (size == 2)
 		ft_solve2(a);
-	
-	/*while (a)
+	if (size == 3)
+		ft_solve3(a, b);
+/* 	tmp2 = a;
+	while (tmp2)
 	{
-		printf("%d\n", a->nbr);
-		a = a->next;
-	}*/
+		ft_printf("%d\n", a->nbr);
+		tmp2 = tmp2->next;
+	} */
 	return (0);
 }
