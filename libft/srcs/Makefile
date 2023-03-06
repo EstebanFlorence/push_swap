@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/24 18:58:26 by adi-nata          #+#    #+#              #
-#    Updated: 2023/02/28 15:05:47 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/05 23:41:06 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,12 +74,12 @@ FLAGS	= -Wall -Wextra -Werror -I ../include
 		${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:		${OBJS}
-	ar rcs ${NAME} ${OBJS}
+				ar rcs ${NAME} ${OBJS}
 
 all: 		${NAME}
 
 bonus:		${NAME} ${OBJSB}
-	ar rcs ${NAME} ${OBJSB}
+			ar rcs ${NAME} ${OBJSB}
 
 clean:
 			${RM} ${OBJS} ${OBJSB}

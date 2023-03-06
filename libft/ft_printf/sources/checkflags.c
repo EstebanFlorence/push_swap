@@ -6,11 +6,11 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 22:27:49 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/01/03 13:07:03 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/04 16:41:27 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "ft_printf.h"
 
 void	ft_checkflags(const char *str, int p, int i, t_format *flag)
 {

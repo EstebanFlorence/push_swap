@@ -6,11 +6,11 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:24:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/01/03 16:35:37 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/04 16:43:38 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "ft_printf.h"
 
 void	ft_unsconvert(unsigned int n, int len, char *snbr)
 {

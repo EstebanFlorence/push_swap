@@ -6,11 +6,11 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 15:50:56 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/01/03 16:25:18 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/04 16:43:32 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "ft_printf.h"
 
 void	ft_putstrprc(char *s, t_format *flag)
 {

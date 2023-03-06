@@ -6,11 +6,11 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 09:29:59 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/01/03 16:37:49 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/04 16:39:05 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *str, ...)
 {

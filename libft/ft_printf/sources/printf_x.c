@@ -6,11 +6,11 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 20:48:02 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/01/03 16:38:05 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/04 16:43:19 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "ft_printf.h"
 
 void	ft_printfx(unsigned int nbr, t_format *flag,
 		const char *fomrstr, int spec)

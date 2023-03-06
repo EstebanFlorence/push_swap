@@ -6,17 +6,15 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/10 18:13:54 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/03 19:37:25 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/06 11:24:05 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= push_swap
+NAME	= push_swap.a
 
-CC		= cc
+CC		= gcc
 
-FLAGS	= -Wall -Wextra -Werror -I${INC_DIR}
-
-INC_DIR	= ./libft/include
+FLAGS	= -Wall -Wextra -Werror -Ilibft/include/
 
 SRCS	= push_swap.c \
 			utils.c
@@ -38,12 +36,10 @@ CYAN 		= \033[1;36m
 RM		    = rm -f
 
 ${NAME}:	${OBJS}
-			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(NAME) ${CLR_RMV}..."
-			${CC} ${FLAGS} -o ${NAME} ${OBJS}
-			@echo "${GREEN}${NAME} created [0m ✔️"
+			ar rcs ${NAME} ${OBJS}
+			make -C ./libft/
 
 all:		${NAME}					
-						make -C ./libft/
 
 bonus:			all
 						cd bonus && ${MAKE}
@@ -51,7 +47,6 @@ bonus:			all
 clean:
 						@ ${RM} *.o */*.o */*/*.o
 						make clean -C ./libft/
-						@ echo "${RED}Deleting ${CYAN}${NAME} ${CLR_RMV}objs ✔️"
 
 bonusclean:		clean
 						cd bonus && ${MAKE} clean
@@ -59,7 +54,6 @@ bonusclean:		clean
 fclean:			clean
 						@ ${RM} ${NAME}
 						make fclean -C ./libft/
-						@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary ✔️"
 
 bonusfclean:	fclean
 						cd bonus && ${MAKE} re

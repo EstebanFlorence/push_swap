@@ -6,14 +6,14 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 09:29:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/02/24 19:11:59 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/04 16:40:05 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "../../include/libft.h"
+# include "libft.h"
 
 # include <stdarg.h>
 # include <unistd.h>
