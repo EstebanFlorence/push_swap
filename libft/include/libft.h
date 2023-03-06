@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:02:14 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/03 19:07:10 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/06 23:40:27 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct s_stack
+{
+	int				nbr;
+	struct s_stack	*prev;
+	struct s_stack	*next;
+}	t_stack;
+
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
@@ -30,7 +37,6 @@ void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 
 void				*ft_calloc(size_t count, size_t size);
-
 void				ft_bzero(void *s, size_t n);
 
 char				*ft_strchr(const char *s, int c);
@@ -67,5 +73,14 @@ void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr(int n);
 
+int					ft_lstsize(t_stack *stack);
+t_stack				*ft_lstnew(int nb);
+t_stack				*ft_lstlast(t_stack *lst);
+void				ft_lstadd_back(t_stack **lst, t_stack *new);
+void				ft_lstadd_front(t_list **lst, t_list *new);
+void				ft_lstdelone(t_list *lst, void (*del)(void*));
+void				ft_lstclear(t_list **lst, void (*del)(void *));
+void				ft_lstiter(t_list *lst, void (*f)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

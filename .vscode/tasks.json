@@ -13,7 +13,7 @@
 				"libft/get_next_line/*.c",
 				"libft/srcs/*.c",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/push_swap"
             ],
             "options": {
                 "cwd": "${fileDirname}"
