@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/07 00:19:34 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/08 00:25:45 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,42 +44,39 @@ void	ft_solve2(t_stack *stack)
 		sasb(stack, 'a');
 }
 
-void	ft_solve3(t_stack *a, t_stack *b)
+void	ft_solve3(t_stack *stack)
 {
-	rarb(&a, 'a');
+	rarb(&stack, 'a');
+}
+
+
+void	ft_test(t_stack *stack)
+{
+	while(stack->prev)
+		stack = stack->prev;
+	while (stack)
+	{
+		ft_printf("%d\n", stack->nbr);
+		stack = stack->next;
+	}
 }
 
 int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
-/* 	t_stack	*tmp;
-	t_stack	*tmp2; */
 	int		size;
 
 	a = NULL;
 	b = NULL;
-/* 	tmp = NULL;
-	tmp2 = NULL; */
-
 	size = 0;
 	ft_stackinit(ac, av, &a);
 	size = ft_lstsize(a);
-/* 	tmp = a;
-	while (tmp)
-	{
-		ft_printf("%d\n", tmp->nbr);
-		tmp = tmp->next;
-	} */
+	ft_test(a);
 	if (size == 2)
 		ft_solve2(a);
 	else if (size == 3)
-		ft_solve3(a, b);
-/* 	tmp2 = a;
-	while (tmp2)
-	{
-		ft_printf("%d\n", a->nbr);
-		tmp2 = tmp2->next;
-	} */
+		ft_solve3(a);
+	ft_test(a);
 	return (0);
 }
