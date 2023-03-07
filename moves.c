@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:14:19 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/06 23:15:36 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/07 00:10:00 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	sasb(t_stack *stack, char c)
 	stack->next->nbr = swap;
 	if (c == 'a')
 		ft_printf("sa\n");
-	else
+	else if (c == 'b')
 		ft_printf("sb\n");
 }
 
@@ -45,7 +45,7 @@ void	rarb(t_stack **stack, char c)
 	(*stack)->prev = NULL;
 	if (c == 'a')
 		ft_printf("ra\n");
-	else
+	else if (c == 'b')
 		ft_printf("rb\n");
 }
 
@@ -70,7 +70,7 @@ void	rrarrb(t_stack **stack, char c)
 	*stack = tmp;
 	if (c == 'a')
 		ft_printf ("rra\n");
-	else
+	else if (c == 'b')
 		ft_printf ("rrb\n");
 }
 
@@ -83,32 +83,6 @@ void	papb(t_stack **a, t_stack **b, char c)
 	ft_rmfirstnbr(a);
 	if (c == 'a')
 		ft_printf("pa\n");
-	else
+	else if (c == 'b')
 		ft_printf("pb\n");
-}
-
-void	ft_addfirstnbr(t_stack **stack, int n)
-{
-	t_stack	*new;
-
-	new = ft_lstnew(n);
-	if (!*stack)
-		*stack = new;
-	else
-	{
-		new->next = *stack;
-		(*stack)->prev = new;
-		*stack = new;
-	}
-}
-
-void	ft_rmfirstnbr(t_stack **stack)
-{
-	if ((*stack)->next)
-	{
-		(*stack) = (*stack)->next;
-		(*stack)->prev = NULL;
-	}
-	else
-		*stack = NULL;
 }
