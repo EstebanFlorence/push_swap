@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/08 01:16:24 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/08 18:57:51 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,22 @@ void	ft_solve3(t_stack *stack)
 	a = stack->nbr;
 	b = stack->next->nbr;
 	c = stack->next->next->nbr;
-
+	if (b < a && a < c)
+		sasb (stack, 'a');
+	if (c < a && a < b)
+		rarb (&stack, 'a');
+	if (b < c && c < a)
+		rrarrb (&stack, 'a');
+	if (a < c && c < b)
+	{
+		sasb (stack, 'a');
+		rarb (&stack, 'a');
+	}
+	if (c < b && b < a)
+	{
+		sasb (stack, 'a');
+		rrarrb (&stack, 'a');
+	}
 }
 
 

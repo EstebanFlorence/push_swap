@@ -10,7 +10,6 @@
                 "-Ilibft/include",
                 "*.c",
 				"libft/ft_printf/sources/*.c",
-				"libft/get_next_line/*.c",
 				"libft/srcs/*.c",
                 "-o",
                 "${fileDirname}/push_swap"
