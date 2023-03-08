@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/08 00:25:34 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/08 22:06:55 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 # include "libft/include/ft_printf.h"
 
 void		ft_stackinit(int ac, char **av, t_stack **stack);
-void		ft_solve2(t_stack *stack);
-void		ft_solve3(t_stack *stack);
 int			ft_minimum(t_stack *stack);
 void		ft_addfirstnbr(t_stack **stack, int n);
 void		ft_rmfirstnbr(t_stack **stack);
+void		ft_solve2(t_stack *stack);
+void		ft_solve3(t_stack *stack);
+void		ft_solve4(t_stack *a, t_stack *b);
 
 //	MOVES
 
