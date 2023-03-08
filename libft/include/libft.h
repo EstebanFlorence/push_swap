@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:02:14 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/07 00:05:42 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/08 02:52:51 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <stddef.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include <sys/types.h>
+# include <sys/uio.h>
 
 typedef struct s_list
 {
@@ -29,6 +33,10 @@ typedef struct s_stack
 	struct s_stack	*prev;
 	struct s_stack	*next;
 }	t_stack;
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 420
+# endif
 
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
@@ -82,5 +90,9 @@ void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+char				*get_next_line(int fd);
+char				*zeline(int fd, char **stat, char *buffer);
+size_t				endornewline(char *buffer, int bytesread);
 
 #endif

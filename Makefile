@@ -6,19 +6,19 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/10 18:13:54 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/06 21:49:55 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/08 03:48:44 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= push_swap.a
+NAME	= push_swap
 
 CC		= gcc
 
 RM	    = rm -f
 
-FLAGS	= -Wall -Wextra -Werror -Ilibft/include/
+FLAGS	= -Wall -Wextra -Werror -g -Ilibft/include/
 
-FIRST	= make -C ./libft/
+FIRST	= make -C ./libft/srcs/
 
 SRCS	= push_swap.c\
 			utils.c\
@@ -29,40 +29,21 @@ OBJS	= ${SRCS:.c=.o}
 .c.o:
 		${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
-
-CLR_RMV		= \033[0m
-RED		    = \033[1;31m
-GREEN		= \033[1;32m
-YELLOW		= \033[1;33m
-BLUE		= \033[1;34m
-CYAN 		= \033[1;36m
-
-
 ${NAME}:	${OBJS}
-			ar rcs ${NAME} ${OBJS}
+			make all -C ./libft
+			${CC} ${FLAGS} -o ${NAME} ${OBJS}
 
-all:		${NAME}					
 
-bonus:			all
-						cd bonus && ${MAKE}
+all:	${NAME}
 
 clean:
-						@ ${RM} *.o */*.o */*/*.o
-						make clean -C ./libft/
+			@ ${RM} *.o */*.o */*/*.o
+			make clean -C ./libft
 
-bonusclean:		clean
-						cd bonus && ${MAKE} clean
+fclean:		clean
+			@ ${RM} ${NAME}
+			make fclean -C ./libft
 
-fclean:			clean
-						@ ${RM} ${NAME}
-						make fclean -C ./libft/
-
-bonusfclean:	fclean
-						cd bonus && ${MAKE} re
-
-re:				fclean all
-
-bonusre:		re
-						cd bonus && ${MAKE} re
+re:		fclean all
 
 .PHONY:			all clean fclean re bonus bonusclean bonusfclean bonusre

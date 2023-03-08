@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/24 18:58:26 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/06 12:08:30 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/08 02:56:40 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,8 +49,7 @@ SRC	= ft_isalpha.c\
 		ft_putnbr_fd.c\
 		ft_split.c\
 		ft_itoa.c
-
-SRCB	=	ft_lstnew.c\
+		ft_lstnew.c\
 		ft_lstadd_front.c\
 		ft_lstsize.c\
 		ft_lstlast.c\
@@ -58,11 +57,10 @@ SRCB	=	ft_lstnew.c\
 		ft_lstdelone.c\
 		ft_lstclear.c\
 		ft_lstiter.c\
-		ft_lstmap.c
+		ft_lstmap.c\
+		get_next_line.c
 
 OBJS	= ${SRC:.c=.o}
-
-OBJSB	= ${SRCB:.c=.o}
 
 CC	= gcc
 
@@ -78,14 +76,11 @@ ${NAME}:		${OBJS}
 
 all: 		${NAME}
 
-bonus:		${NAME} ${OBJSB}
-			ar rcs ${NAME} ${OBJSB}
-
 clean:
-			${RM} ${OBJS} ${OBJSB}
+			${RM} ${OBJS}
 
 fclean:		clean
-			${RM} ${NAME} $(bonus)
+			${RM} ${NAME}
 
 re:			fclean ${NAME}
 

@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/08 00:25:45 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/08 01:16:24 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,14 @@ void	ft_solve2(t_stack *stack)
 
 void	ft_solve3(t_stack *stack)
 {
-	rarb(&stack, 'a');
+	int	a;
+	int	b;
+	int	c;
+
+	a = stack->nbr;
+	b = stack->next->nbr;
+	c = stack->next->next->nbr;
+
 }
 
 
