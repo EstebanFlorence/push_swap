@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/08 23:43:33 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/09 16:50:32 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	ft_solve4(t_stack **a, t_stack **b)
 	else if (x < n && n < y)
 		sasb ((*a), 'a');
 	else if (n > z)
-		rrarrb (a, 'a');
+		rarb (a, 'a');
 }
 
 void	ft_test(t_stack *stack)
