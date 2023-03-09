@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:14:19 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/08 22:47:06 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/09 00:19:03 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,15 @@ void	rrarrb(t_stack **stack, char c)
 		return ;
 	tmp = *stack;
 	rot = *stack;
-	while (tmp->next)
+	while (rot->next)
 	{
-		rot = tmp;
-		tmp = tmp->next;
+		tmp = rot;
+		rot = rot->next;
 	}
-	rot->next = NULL;
-	tmp->next = *stack;
-	tmp->prev = NULL;
-	tmp->next->prev = tmp;
-	*stack = tmp;
+	rot->next = *stack;
+	rot->prev = NULL;
+	tmp->next = NULL;
+	(*stack)->prev = rot;
 	if (c == 'a')
 		ft_printf ("rra\n");
 	else if (c == 'b')
