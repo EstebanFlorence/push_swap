@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/10 18:13:54 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/08 16:19:55 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/09 23:24:19 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ FIRST	= make -C ./libft/
 
 SRCS	= push_swap.c\
 			utils.c\
-			moves.c
+			moves.c\
+			minisolver.c
 
 OBJS	= ${SRCS:.c=.o}
 
