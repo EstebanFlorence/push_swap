@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/09 23:24:23 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/09 23:26:29 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,27 +24,6 @@ void	ft_stackinit(int ac, char **av, t_stack **stack)
 	}
 }
 
-int	ft_minimum(t_stack *stack)
-{
-	int	min;
-
-	min = stack->nbr;
-	while (stack)
-	{
-		if (stack->nbr < min)
-			min = stack->nbr;
-		stack = stack->next;
-	}
-	return (min);
-}
-
-
-
-
-
-
-
-
 void	ft_test(t_stack *stack)
 {
 	while(stack->prev)
@@ -55,8 +34,6 @@ void	ft_test(t_stack *stack)
 		stack = stack->next;
 	}
 }
-
-
 
 int	main(int ac, char **av)
 {
@@ -71,7 +48,7 @@ int	main(int ac, char **av)
 	size = ft_lstsize (a);
 	ft_test(a);
 	if (size < 6)
-		miniresolver(&a, &b, size);
+		minisolver(&a, &b, size);
 	ft_test(a);
 	return (0);
 }
