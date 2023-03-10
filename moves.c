@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:14:19 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/09 18:17:27 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/10 13:18:36 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,18 @@ void	papb(t_stack **a, t_stack **b, char c)
 		ft_printf("pa\n");
 	else if (c == 'b')
 		ft_printf("pb\n");
+}
+
+void	rr(t_stack **a, t_stack **b)
+{
+	rarb (a, 'r');
+	rarb (b, 'r');
+	ft_printf ("rr\n");
+}
+
+void	rrr(t_stack **a, t_stack **b)
+{
+	rrarrb (a, 'r');
+	rrarrb (b, 'r');
+	ft_printf ("rrr\n");
 }

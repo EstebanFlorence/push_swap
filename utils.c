@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:13:09 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/09 23:25:26 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/10 18:40:18 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,19 @@ int	ft_minimum(t_stack *stack)
 		stack = stack->next;
 	}
 	return (min);
+}
+
+int	ft_position(t_stack *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack->next)
+	{
+		stack = stack->next;
+		i++;
+	}
+	return (i);
 }
 
 void	ft_addfirstnbr(t_stack **stack, int n)

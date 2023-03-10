@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/09 23:22:38 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/10 19:22:09 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void		minisolver(t_stack **a, t_stack **b, int size);
 void		ft_solve2(t_stack *stack);
 void		ft_solve3(t_stack **stack);
 void		ft_solve4(t_stack **a, t_stack **b);
-void		ft_solve5(t_stack **a, t_stack **b);
+void		ft_solve5(t_stack **a, t_stack **b, int size);
+int			ft_position(t_stack *stack);
 
 //	MOVES
 
@@ -31,6 +32,8 @@ void		sasb(t_stack *stack, char c);
 void		rarb(t_stack **stack, char c);
 void		rrarrb(t_stack **stack, char c);
 void		papb(t_stack **a, t_stack **b, char c);
+void		rr(t_stack **a, t_stack **b);
+void		rrr(t_stack **a, t_stack **b);
 
 void	ft_test(t_stack *stack);
 

@@ -6,21 +6,11 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 23:21:55 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/09 23:24:23 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/10 19:21:51 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	minisolver(t_stack **a, t_stack **b, int size)
-{
-	if (size == 2)
-		ft_solve2 (*a);
-	else if (size == 3)
-		ft_solve3 (a);
-	else if (size == 4)
-		ft_solve4 (a, b);
-}
 
 void	ft_solve2(t_stack *stack)
 {
@@ -84,5 +74,16 @@ void	ft_solve4(t_stack **a, t_stack **b)
 		rarb (a, 'a');
 }
 
-void	ft_solve5(t_stack **a, t_stack ** b)
-{}
+void	ft_solve5(t_stack **a, t_stack **b, int size)
+{
+	int	pos;
+	int	min;
+
+	pos = 0;
+	min = ft_minimum(*a);
+	while ((*a)->nbr != min)
+	{
+		(*a) = (*a)->next;
+		pos++;
+	}
+}
