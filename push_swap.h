@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/10 19:22:09 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/11 18:00:50 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void		ft_solve3(t_stack **stack);
 void		ft_solve4(t_stack **a, t_stack **b);
 void		ft_solve5(t_stack **a, t_stack **b, int size);
 int			ft_position(t_stack *stack);
+void		ft_whichalf(t_stack **a, t_stack **b, int pos, int size);
 
 //	MOVES
 
@@ -35,6 +36,6 @@ void		papb(t_stack **a, t_stack **b, char c);
 void		rr(t_stack **a, t_stack **b);
 void		rrr(t_stack **a, t_stack **b);
 
-void	ft_test(t_stack *stack);
+void		ft_test(t_stack *stack);
 
 #endif

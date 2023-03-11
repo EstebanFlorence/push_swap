@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:13:09 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/10 18:40:18 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:51:35 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,3 +65,24 @@ void	ft_rmfirstnbr(t_stack **stack)
 		*stack = NULL;
 }
 
+void	ft_whichalf(t_stack **a, t_stack **b, int pos, int size)
+{
+	if (pos > (size / 2))
+	{
+		while (pos <= size)
+		{
+			rrarrb (a, 'a');
+			pos++;
+		}
+		papb (a, b, 'b');
+	}
+	else
+	{
+		while (pos > 1)
+		{
+			rarb (a, 'a');
+			pos--;
+		}
+		papb (a, b, 'b');
+	}
+}

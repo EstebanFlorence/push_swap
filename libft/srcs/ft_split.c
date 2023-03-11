@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:02:57 by adi-nata          #+#    #+#             */
-/*   Updated: 2022/10/28 12:26:17 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/11 18:13:03 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ size_t	numstr(const char *s, char c)
 		i++;
 	}
 	return (n);
+}
+
+void	ft_tokenize()
+{
+
 }
 
 void	ft_splitta(const char *s, char c, char **split, size_t n)

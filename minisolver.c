@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 23:21:55 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/10 19:21:51 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:53:06 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_solve4(t_stack **a, t_stack **b)
 	int	x;
 	int	y;
 	int	z;
-	
+
 	papb (a, b, 'b');
 	ft_solve3 (a);
 	while ((*a)->prev)
@@ -76,14 +76,27 @@ void	ft_solve4(t_stack **a, t_stack **b)
 
 void	ft_solve5(t_stack **a, t_stack **b, int size)
 {
-	int	pos;
-	int	min;
+	int		pos;
+	int		min;
+	t_stack	*tmp;
 
-	pos = 0;
-	min = ft_minimum(*a);
-	while ((*a)->nbr != min)
+	pos = 1;
+	min = 0;
+	tmp = *a;
+	while (size > 3)
 	{
-		(*a) = (*a)->next;
-		pos++;
+		min = ft_minimum(*a);
+		while (tmp->nbr != min)
+		{
+			tmp = tmp->next;
+			pos++;
+		}
+		ft_whichalf (a, b, pos, size);
+		size--;
+		pos = 1;
+		tmp = *a;
 	}
+	ft_solve3 (a);
+	papb(b, a, 'a');
+	papb(b, a, 'a');
 }

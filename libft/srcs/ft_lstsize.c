@@ -6,13 +6,13 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:29:03 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/06 23:29:44 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:55:02 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_stack *stack)
+int	ft_lstsize(t_stack *stack)
 {
 	int	i;
 
