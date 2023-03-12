@@ -6,15 +6,15 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 23:21:55 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/11 17:53:06 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/12 20:16:03 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_solve2(t_stack *stack)
+void	ft_solve2(t_stack **stack)
 {
-	if (stack->nbr != ft_minimum(stack))
+	if ((*stack)->nbr != ft_minimum(*stack))
 		sasb(stack, 'a');
 }
 
@@ -28,19 +28,19 @@ void	ft_solve3(t_stack **stack)
 	b = (*stack)->next->nbr;
 	c = (*stack)->next->next->nbr;
 	if (b < a && a < c)
-		sasb ((*stack), 'a');
+		sasb (stack, 'a');
 	else if (c < a && a < b)
 		rrarrb (stack, 'a');
 	else if (b < c && c < a)
 		rarb (stack, 'a');
 	else if (a < c && c < b)
 	{
-		sasb ((*stack), 'a');
+		sasb (stack, 'a');
 		rarb (stack, 'a');
 	}
 	else if (c < b && b < a)
 	{
-		sasb ((*stack), 'a');
+		sasb (stack, 'a');
 		rrarrb (stack, 'a');
 	}
 }
@@ -64,12 +64,12 @@ void	ft_solve4(t_stack **a, t_stack **b)
 	if (y < n && n < z)
 	{
 		rrarrb (a, 'a');
-		sasb ((*a), 'a');
+		sasb (a, 'a');
 		rrarrb (a, 'a');
 		rrarrb (a, 'a');
 	}
 	else if (x < n && n < y)
-		sasb ((*a), 'a');
+		sasb (a, 'a');
 	else if (n > z)
 		rarb (a, 'a');
 }
@@ -91,12 +91,12 @@ void	ft_solve5(t_stack **a, t_stack **b, int size)
 			tmp = tmp->next;
 			pos++;
 		}
-		ft_whichalf (a, b, pos, size);
+		ft_whichalf(a, b, pos, size);
 		size--;
 		pos = 1;
 		tmp = *a;
 	}
-	ft_solve3 (a);
+	ft_solve3(a);
 	papb(b, a, 'a');
 	papb(b, a, 'a');
 }

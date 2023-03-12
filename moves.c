@@ -6,21 +6,21 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:14:19 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/11 17:53:15 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/12 20:10:57 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sasb(t_stack *stack, char c)
+void	sasb(t_stack **stack, char c)
 {
 	int	swap;
 
-	if (stack == NULL || stack->next == NULL)
+	if (stack == NULL || (*stack)->next == NULL)
 		return ;
-	swap = stack->nbr;
-	stack->nbr = stack->next->nbr;
-	stack->next->nbr = swap;
+	swap = (*stack)->nbr;
+	(*stack)->nbr = (*stack)->next->nbr;
+	(*stack)->next->nbr = swap;
 	if (c == 'a')
 		ft_printf("sa\n");
 	else if (c == 'b')
@@ -87,16 +87,3 @@ void	papb(t_stack **a, t_stack **b, char c)
 		ft_printf("pb\n");
 }
 
-void	rr(t_stack **a, t_stack **b)
-{
-	rarb (a, 'r');
-	rarb (b, 'r');
-	ft_printf ("rr\n");
-}
-
-void	rrr(t_stack **a, t_stack **b)
-{
-	rrarrb (a, 'r');
-	rrarrb (b, 'r');
-	ft_printf ("rrr\n");
-}
