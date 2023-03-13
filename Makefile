@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/10 18:13:54 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/12 20:07:11 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/12 20:19:06 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ SRCS	= push_swap.c\
 			utils.c\
 			moves.c\\
 			doublemoves.c\
-			minisolver.c
+			minisolver.c\
+			bigsolver.c
 
 OBJS	= ${SRCS:.c=.o}
 
