@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 23:21:55 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/12 20:16:03 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/13 18:56:27 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,26 @@ void	ft_solve4(t_stack **a, t_stack **b)
 		rarb (a, 'a');
 }
 
-void	ft_solve5(t_stack **a, t_stack **b, int size)
+void	ft_putback(t_stack **a, t_stack **b, int size, int tmpsize)
+{
+	ft_solve3(a);
+	while (size < tmpsize)
+	{
+		papb(b, a, 'a');
+		size++;
+	}
+}
+
+void	ft_solve5to50(t_stack **a, t_stack **b, int size)
 {
 	int		pos;
 	int		min;
+	int		tmpsize;
 	t_stack	*tmp;
 
 	pos = 1;
 	min = 0;
+	tmpsize = size;
 	tmp = *a;
 	while (size > 3)
 	{
@@ -96,7 +108,5 @@ void	ft_solve5(t_stack **a, t_stack **b, int size)
 		pos = 1;
 		tmp = *a;
 	}
-	ft_solve3(a);
-	papb(b, a, 'a');
-	papb(b, a, 'a');
+	ft_putback(a, b, size, tmpsize);
 }

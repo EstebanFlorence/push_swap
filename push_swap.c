@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/12 20:16:26 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/13 19:03:08 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,15 @@ void	minisolver(t_stack **a, t_stack **b, int size)
 	else if (size == 4)
 		ft_solve4 (a, b);
 	else if (size == 5)
-		ft_solve5 (a, b, size);
+		ft_solve5to50 (a, b, size);
 }
 
 void	bigsolver(t_stack **a, t_stack **b, int size)
 {
-
+	if (size <= 50)
+		ft_solve5to50(a, b, size);
+	else
+		ft_lis(a, b, size);
 }
 
 int	main(int ac, char **av)
@@ -63,7 +66,7 @@ int	main(int ac, char **av)
 	size = 0;
 	ft_stackinit (ac, av, &a);
 	size = ft_lstsize (a);
-	ft_test(a);
+	//ft_test(a);
 	if (size < 6)
 		minisolver(&a, &b, size);
 	else

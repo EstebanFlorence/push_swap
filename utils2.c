@@ -6,9 +6,16 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 20:22:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/12 20:22:53 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/13 19:04:03 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	ft_lis(t_stack **a, t_stack **b, int size)
+{
+	int		pos;
+
+	pos = 1;
+	
+}
