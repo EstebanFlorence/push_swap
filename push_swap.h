@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/14 22:57:13 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/14 23:21:34 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void		ft_solve5to50(t_stack **a, t_stack **b, int size);
 int			ft_position(t_stack *stack);
 void		ft_whichalf(t_stack **a, t_stack **b, int pos, int size);
 void		ft_putback(t_stack **a, t_stack **b, int size, int tmpsize);
-int			ft_lis(t_stack **stack, int **lis);
-void		ft_lisarr(int **lis, int (*tmplis)[100], int len);
+int			ft_lis(t_stack **stack, int **lis, int size);
+void		ft_lisarr(int **lis, int **tmplis, int len);
 
 //	MOVES
 
