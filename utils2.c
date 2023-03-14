@@ -6,16 +6,34 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 20:22:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/13 19:04:03 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:36:07 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lis(t_stack **a, t_stack **b, int size)
+int	ft_lis(t_stack **stack, int size)
 {
-	int		pos;
+	int		i;
+	int		len;
+	int		lis[100];
+	t_stack	*tmp;
 
-	pos = 1;
-	
+	i = 0;
+	len = 1;
+	//lis = (int *)malloc(sizeof(int) * size);
+	lis[i] = (*stack)->nbr;
+	tmp = *stack;
+	tmp = tmp->next;
+	while (tmp)
+	{
+		while (i < len && tmp->nbr > lis[i])
+			i++;
+		lis[i] = tmp->nbr;
+		if (i == len)
+			len++;
+		tmp = tmp->next;
+	}
+	//free (lis);
+	return (len);
 }
