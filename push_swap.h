@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/19 18:37:23 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/19 19:44:11 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,14 @@ void		ft_stackinit(int ac, char **av, t_stack **stack);
 
 void		minisolver(t_stack **a, t_stack **b, int size);
 void		bigsolver(t_stack **a, t_stack **b, int size);
+
 void		ft_solve2(t_stack **stack);
 void		ft_solve3(t_stack **stack);
 void		ft_solve4(t_stack **a, t_stack **b);
 void		ft_solve5(t_stack **a, t_stack **b, int size);
 void		ft_solve5to50(t_stack **a, t_stack **b, int size);
+
+void		ft_nonlis(t_stack **a, t_stack **b, t_lis *listruct, int *lis);
 
 //	UTILS
 
@@ -44,8 +47,8 @@ void		ft_putback(t_stack **a, t_stack **b, int size, int tmpsize);
 
 //	UTILIS
 
-int			ft_lis(t_lis *listruct, t_stack **stack, int **lis, int size);
-void		ft_lislen(t_lis *listruct, t_stack **stack, t_stack *tmpstack, int size);
+void		ft_lis(t_lis *listruct, t_stack **stack, int **lis, int size);
+void		ft_lislen(t_stack **stack, t_stack *tmpstack, t_lis *listruct, int size);
 int			searchreplace(int *lis, int start, int i, int nbr);
 void		ft_lisarr(t_stack **stack, t_stack *tmpstack, t_lis *listruct, int **lis);
 void		ft_lisinnit(t_lis *listruct, t_stack **stack, int size);

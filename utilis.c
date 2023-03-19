@@ -6,24 +6,24 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:27:13 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/19 18:29:33 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/19 19:44:18 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_lis(t_lis *listruct, t_stack **stack, int **lis, int size)
+void	ft_lis(t_lis *listruct, t_stack **stack, int **lis, int size)
 {
 	t_stack	*tmpstack;
 
 	tmpstack = (*stack)->next;
-	ft_lislen(listruct, stack, tmpstack, size);
+	ft_lislen(stack, tmpstack, listruct, size);
 	tmpstack = *stack;
-	ft_lisarr(listruct, stack, tmpstack, lis);
-	return (listruct->lislen + 1);
+	ft_lisarr(stack, tmpstack, listruct, lis);
+	//return (listruct->lislen + 1);
 }
 
-void	ft_lislen(t_lis *listruct, t_stack **stack, t_stack *tmpstack, int size)
+void	ft_lislen(t_stack **stack, t_stack *tmpstack, t_lis *listruct, int size)
 {
 	int		i;
 
@@ -95,4 +95,21 @@ int	searchreplace(int *lis, int start, int i, int nbr)
 	}
 	lis[pos + 1] = nbr;
 	return (pos + 1);
+}
+
+void	ft_lisinnit(t_lis *listruct, t_stack **stack, int size)
+{
+	int	i;
+
+	i = 1;
+	listruct->index = (int *)malloc(size * sizeof(int));
+	listruct->tmplis = (int *)malloc(size * sizeof(int));
+	listruct->tmplis[0] = (*stack)->nbr;
+	listruct->lislen = -1;
+	listruct->stacklen = size;
+	while (i < size)
+	{
+		listruct->tmplis[i] = INT_MAX;
+		i++;
+	}
 }
