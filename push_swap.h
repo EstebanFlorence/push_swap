@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/19 19:44:11 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/20 00:00:35 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void		ft_nonlis(t_stack **a, t_stack **b, t_lis *listruct, int *lis);
 int			ft_minimum(t_stack *stack);
 void		ft_addfirstnbr(t_stack **stack, int n);
 void		ft_rmfirstnbr(t_stack **stack);
-int			ft_position(t_stack *stack);
+int			ft_position(t_stack *stack, int nbr);
 void		ft_whichalf(t_stack **a, t_stack **b, int pos, int size);
 void		ft_putback(t_stack **a, t_stack **b, int size, int tmpsize);
 

@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/19 20:18:18 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/20 00:02:18 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	bigsolver(t_stack **a, t_stack **b, int size)
 	i = 0;
 	lis = NULL;
 	ft_lis(listruct, a, &lis, size);
-	while (i <= listruct->lislen)
+	while (i < listruct->lislen)
 	{
 		ft_printf("%d\n", lis[i]);
 		i++;
