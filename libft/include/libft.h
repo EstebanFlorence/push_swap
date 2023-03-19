@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:02:14 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/11 18:00:06 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/19 15:26:47 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/uio.h>
+# include <limits.h>
 
 typedef struct s_list
 {

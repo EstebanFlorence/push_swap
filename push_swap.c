@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/15 00:40:29 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/15 11:19:10 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,6 @@ void	bigsolver(t_stack **a, t_stack **b, int size)
 	{
 		ft_printf("%d\n", lis[i]);
 		i++;
-	}
-	i = 0;
-	while (*a)
-	{
-		if ((*a)->nbr == lis[i])
-		{
-
-		}
-		*a = (*a)->next;
 	}
 	free (lis);
 }

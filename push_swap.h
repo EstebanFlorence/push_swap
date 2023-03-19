@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/14 23:21:34 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/19 14:56:03 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int			ft_position(t_stack *stack);
 void		ft_whichalf(t_stack **a, t_stack **b, int pos, int size);
 void		ft_putback(t_stack **a, t_stack **b, int size, int tmpsize);
 int			ft_lis(t_stack **stack, int **lis, int size);
+int			searchreplace(int *lis, int start, int i, int nbr);
 void		ft_lisarr(int **lis, int **tmplis, int len);
 
 //	MOVES

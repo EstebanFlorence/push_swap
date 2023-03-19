@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 20:22:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/14 23:40:59 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/19 16:08:03 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,42 +15,86 @@
 int	ft_lis(t_stack **stack, int **lis, int size)
 {
 	int		i;
-	int		len;
+	int		pos;
+	int		tmp;
+	int		lislen;
+	int		*index;
 	int		*tmplis;
-	t_stack	*tmp;
-
-	i = 0;
-	len = 1;
+	t_stack	*tmpstack;
+	
+	i = 1;
+	pos = 1;
+	tmp = 0;
+	lislen = -1;
+	index = (int *)malloc(size * sizeof(int));
 	tmplis = (int *)malloc(size * sizeof(int));
-	if (tmplis == NULL)
-		return (0);
-	tmplis[i] = (*stack)->nbr;
-	tmp = (*stack)->next;
-	while (tmp)
+	tmpstack = (*stack)->next;
+	tmplis[0] = (*stack)->nbr;
+	while (i < size)
 	{
-		while (i < len && tmp->nbr > tmplis[i])
-			i++;
-		tmplis[i] = tmp->nbr;
-		if (i == len)
-			len++;
-		tmp = tmp->next;
-	}
-	ft_lisarr(lis, &tmplis, len);
-	free (tmplis);
-	return (len);
-}
-
-void	ft_lisarr(int **lis, int **tmplis, int len)
-{
-	int	i;
-
-	i = 0;
-	*lis = (int *)malloc(len * sizeof(int));
-	if (*lis == NULL)
-		return ;
-	while (i < len)
-	{
-		(*lis)[i] = (*tmplis)[i];
+		tmplis[i] = INT_MAX;
 		i++;
 	}
+	i = 1;
+	while (tmpstack)
+	{
+		index[i] = searchreplace(tmplis, 0, i, tmpstack->nbr);
+		if (lislen < index[i])
+			lislen = index[i];
+		i++;
+		tmpstack = tmpstack->next;
+	}
+	i = size - 1;
+	tmp = lislen;
+	tmpstack = *stack;
+	*lis = (int *)malloc((lislen + 1) * sizeof(int));
+	while (i >= 0)
+	{
+		if (index[i] == tmp)
+		{
+			while (pos != i + 1)
+			{
+				tmpstack = tmpstack->next;
+				pos++;
+			}
+			(*lis)[tmp] = tmpstack->nbr;
+			tmpstack = *stack;
+			pos = 1;
+			--tmp;
+		}
+		--i;
+	}
+	free (index);
+	free (tmplis);
+	return (lislen + 1);
+}
+
+int		searchreplace(int *lis, int start, int i, int nbr)
+{
+	int	pos;
+
+	pos = (start + i) / 2;
+	while (start <= i)
+	{
+		if (lis[pos] > nbr)
+			i = pos - 1;
+		else if (lis[pos] == nbr)
+			return (pos);
+		else if (pos + 1 <= i && lis[pos + 1] >= nbr)
+		{
+			lis[pos + 1] = nbr;
+			return (pos + 1);
+		}
+		else
+			start = pos + 1;
+
+		pos = (start + i) / 2;
+	}
+	if (pos == start)
+	{
+		lis[pos] = nbr;
+		return (pos);
+	}
+	lis[pos + 1] = nbr;
+	return (pos + 1);
 }
