@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/19 18:22:43 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/19 18:35:49 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ void	ft_stackinit(int ac, char **av, t_stack **stack)
 
 void	ft_test(t_stack *stack)
 {
-	/* while (stack->prev)
-		stack = stack->prev; */
 	while (stack)
 	{
 		ft_printf("%d\n", stack->nbr);
