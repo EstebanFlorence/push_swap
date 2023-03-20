@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/20 00:00:35 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/20 15:23:38 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_lis
 	int	*tmplis;
 	int	lislen;
 	int	stacklen;
+	int	stay;
 } t_lis;
 
 void		ft_stackinit(int ac, char **av, t_stack **stack);
@@ -35,6 +36,7 @@ void		ft_solve5(t_stack **a, t_stack **b, int size);
 void		ft_solve5to50(t_stack **a, t_stack **b, int size);
 
 void		ft_nonlis(t_stack **a, t_stack **b, t_lis *listruct, int *lis);
+void		ft_stayornot(t_stack **a, t_stack **b, t_stack **tmpstack, t_lis *listruct);
 
 //	UTILS
 

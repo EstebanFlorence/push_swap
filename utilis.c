@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:27:13 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/19 23:37:15 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/20 15:12:43 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ void	ft_lisinnit(t_lis *listruct, t_stack **stack, int size)
 	listruct->tmplis[0] = (*stack)->nbr;
 	listruct->lislen = -1;
 	listruct->stacklen = size;
+	listruct->stay = 0;
 	while (i < size)
 	{
 		listruct->tmplis[i] = INT_MAX;

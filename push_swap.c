@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/20 00:02:18 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/20 14:45:41 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	minisolver(t_stack **a, t_stack **b, int size)
 void	bigsolver(t_stack **a, t_stack **b, int size)
 {
 	int		i;
-	//int		lislen;
 	int		*lis;
 	t_lis	*listruct;
 
@@ -64,8 +63,8 @@ void	bigsolver(t_stack **a, t_stack **b, int size)
 	}
 	ft_nonlis(a, b, listruct, lis);
 
-/* 	ft_test(*a);
-	ft_test(*b); */
+	ft_test(*a);
+	ft_test(*b);
 	ft_freelis(listruct);
 	free (lis);
 }
