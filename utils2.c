@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 20:22:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/21 16:25:04 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/21 19:12:27 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ int	ft_position2(t_stack *stack, int nbr)
 	int pos;
 
 	pos = 0;
-	while(stack && stack->next)
+	while(stack)
 	{
 		if (nbr < stack->nbr && stack->nbr == ft_minimum(stack))
-			return (0);
-		if (nbr > stack->nbr && nbr < stack->next->nbr)
+			return (pos);
+		if (nbr > stack->nbr && nbr > stack->next->nbr \
+				|| nbr > stack->nbr && !stack->next)
 			return (pos + 1);
 		else
 			pos++;
