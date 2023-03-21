@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:13:09 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/21 16:14:44 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/21 19:36:58 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,20 @@ int	ft_minimum(t_stack *stack)
 	while (stack)
 	{
 		if (stack->nbr < min)
+			min = stack->nbr;
+		stack = stack->next;
+	}
+	return (min);
+}
+
+int	ft_minimum2(t_stack *stack, int nbr)
+{
+	int	min;
+
+	min = stack->nbr;
+	while (stack)
+	{
+		if (stack->nbr < min && min >= nbr)
 			min = stack->nbr;
 		stack = stack->next;
 	}
