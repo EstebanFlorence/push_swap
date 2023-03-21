@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/20 14:45:41 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/21 14:27:13 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	bigsolver(t_stack **a, t_stack **b, int size)
 		i++;
 	}
 	ft_nonlis(a, b, listruct, lis);
-
+	ft_moves(a, b);
 	ft_test(*a);
 	ft_test(*b);
 	ft_freelis(listruct);

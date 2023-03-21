@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/20 17:03:14 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/21 16:32:49 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,11 @@ void		ft_solve4(t_stack **a, t_stack **b);
 void		ft_solve5(t_stack **a, t_stack **b, int size);
 void		ft_solve5to50(t_stack **a, t_stack **b, int size);
 
-void		ft_nonlis(t_stack **a, t_stack **b, t_lis *listruct, int *lis);
-void		ft_stayornot(t_stack **a, t_stack **b, t_stack **tmpstack, t_lis *listruct);
+
 void		ft_moves(t_stack **a, t_stack **b);
 void		ft_movinnit(t_stack *stack, int *mov, int size);
+int			ft_findbestmoves(int *mova, int *movb);
+void		ft_makebestmoves(int mova, int movb);
 
 
 //	UTILS
@@ -47,16 +48,19 @@ int			ft_minimum(t_stack *stack);
 void		ft_addfirstnbr(t_stack **stack, int n);
 void		ft_rmfirstnbr(t_stack **stack);
 int			ft_position(t_stack *stack, int nbr);
+int			ft_position2(t_stack *stack, int nbr);
 void		ft_whichalf(t_stack **a, t_stack **b, int pos, int size);
 void		ft_putback(t_stack **a, t_stack **b, int size, int tmpsize);
 
 //	UTILIS
 
 void		ft_lis(t_lis *listruct, t_stack **stack, int **lis, int size);
+void		ft_lisinnit(t_lis *listruct, t_stack **stack, int size);
 void		ft_lislen(t_stack **stack, t_stack *tmpstack, t_lis *listruct, int size);
 int			searchreplace(int *lis, int start, int i, int nbr);
 void		ft_lisarr(t_stack **stack, t_stack *tmpstack, t_lis *listruct, int **lis);
-void		ft_lisinnit(t_lis *listruct, t_stack **stack, int size);
+void		ft_nonlis(t_stack **a, t_stack **b, t_lis *listruct, int *lis);
+void		ft_stayornot(t_stack **a, t_stack **b, t_stack **tmpstack, t_lis *listruct);
 void		ft_freelis(t_lis *listruct);
 
 //	MOVES
