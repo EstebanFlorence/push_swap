@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:37:55 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/20 17:05:45 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/21 10:51:44 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,13 @@ void	ft_stayornot(t_stack **a, t_stack **b, t_stack **tmpstack, \
 void	ft_moves(t_stack **a, t_stack **b)
 {
 	int	sizeb;
-	int	mova;
-	int	movb;
+	int	*mova;
+	int	*movb;
 
 	sizeb = ft_lstsize(*b);
 	mova = (int *)malloc(sizeb * sizeof(int));
 	movb = (int *)malloc(sizeb * sizeof(int));
-	
+	ft_movinnit();
 
 	free (mova);
 	free (movb);
@@ -78,8 +78,8 @@ void	ft_movinnit(t_stack *stack, int *mov, int size)
 
 	i = 0;
 	pos = 1;
-	while (mov[i])
+/* 	while (mov[i])
 	{
 
-	}
+	} */
 }
