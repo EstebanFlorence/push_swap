@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:13:09 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/22 17:26:14 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/22 17:47:09 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_minimum2(t_stack *stack, int nbr)
 			next_min = stack->nbr;
 		stack = stack->next;
 	}
-	return (min);
+	return (next_min);
 }
 
 int	ft_maximum(t_stack *stack)
