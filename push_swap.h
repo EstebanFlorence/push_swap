@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/21 16:35:41 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/22 15:59:42 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_lis
 } t_lis;
 
 void		ft_stackinit(int ac, char **av, t_stack **stack);
-
 void		minisolver(t_stack **a, t_stack **b, int size);
 void		bigsolver(t_stack **a, t_stack **b, int size);
 
@@ -37,7 +36,6 @@ void		ft_solve5to50(t_stack **a, t_stack **b, int size);
 
 
 void		ft_moves(t_stack **a, t_stack **b);
-void		ft_movinnit(t_stack *stack, int *mov, int size);
 int			ft_bestmoves(int *mova, int *movb);
 void		ft_makebestmoves(int mova, int movb);
 
@@ -45,6 +43,8 @@ void		ft_makebestmoves(int mova, int movb);
 //	UTILS
 
 int			ft_minimum(t_stack *stack);
+int			ft_minimum2(t_stack *stack, int nbr);
+int			ft_maximum(t_stack *stack);
 void		ft_addfirstnbr(t_stack **stack, int n);
 void		ft_rmfirstnbr(t_stack **stack);
 int			ft_position(t_stack *stack, int nbr);

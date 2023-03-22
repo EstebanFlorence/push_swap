@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:13:09 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/21 19:36:58 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/22 17:26:14 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,20 @@ int	ft_minimum(t_stack *stack)
 	return (min);
 }
 
+//	ritornare lo stack->nbr successivamente maggiore di nbr, altrimenti nbr
 int	ft_minimum2(t_stack *stack, int nbr)
 {
 	int	min;
+	int	next_min;
 
-	min = stack->nbr;
+	if (nbr >= ft_maximum(stack))
+		return (ft_minimum(stack));
+	min = nbr;
+	next_min = ft_maximum(stack);
 	while (stack)
 	{
-		if (stack->nbr < min && min >= nbr)
-			min = stack->nbr;
+		if (stack->nbr > nbr && stack->nbr < next_min)
+			next_min = stack->nbr;
 		stack = stack->next;
 	}
 	return (min);
@@ -49,6 +54,7 @@ int	ft_maximum(t_stack *stack)
 	{
 		if (stack->nbr > max)
 			max = stack->nbr;
+		stack = stack->next;
 	}
 	return (max);
 }

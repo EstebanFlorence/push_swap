@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:37:55 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/21 18:03:27 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/22 15:55:24 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,18 +88,5 @@ void	ft_makebestmoves(int mova, int movb)
 /* 	while ()
 	{
 		sum = mova + movb;
-	} */
-}
-
-void	ft_movinnit(t_stack *stack, int *mov, int size)
-{
-	int	i;
-	int	pos;
-
-	i = 0;
-	pos = 1;
-/* 	while (mov[i])
-	{
-
 	} */
 }
