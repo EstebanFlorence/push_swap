@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:37:55 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/22 15:55:24 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/22 18:57:49 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_moves(t_stack **a, t_stack **b)
 	int	sizeb;
 	int	*mova;
 	int	*movb;
-	int		i;
+	int	i;
 
 	i = 0;
 	sizeb = ft_lstsize(*b);
@@ -30,7 +30,7 @@ void	ft_moves(t_stack **a, t_stack **b)
 		else
 			movb[i] = i - sizeb;
 		if (ft_position2(*a, ((*b)->nbr)) <= ft_lstsize(*a) / 2)
-			mova[i]  = ft_position2(*a, (*b)->nbr);
+			mova[i] = ft_position2(*a, (*b)->nbr);
 		else
 			mova[i] = ft_position2(*a, (*b)->nbr) - ft_lstsize(*a);
 		printf("MOVA: %d\n", mova[i]);
@@ -38,13 +38,13 @@ void	ft_moves(t_stack **a, t_stack **b)
 		i++;
 		*b = (*b)->next;
 	}
-	i = ft_bestmoves(mova, movb);
+	i = ft_findbestmoves(mova, movb);
 	//ft_makebestmoves(mova[i], movb[i]);
 	free (mova);
 	free (movb);
 }
 
-int	ft_bestmoves(int *mova, int *movb)
+int	ft_findbestmoves(int *mova, int *movb)
 {
 	int		i;
 	int		best;
@@ -58,17 +58,17 @@ int	ft_bestmoves(int *mova, int *movb)
 		if (mova[i] >= 0 && movb[i] >= 0)
 			if (mova[i] >= movb[i])
 				moves = mova[i];
-			else
-				moves = movb[i];
+		else
+			moves = movb[i];
 		if (mova[i] < 0 && movb[i] >= 0)
-			moves = (mova[i] * - 1) + movb[i];
+			moves = (mova[i] * -1) + movb[i];
 		if (mova[i] >= 0 && movb[i] < 0)
 			moves = mova[i] + (movb[i] * -1);
 		if (mova[i] < 0 && movb[i] < 0)
 			if (mova[i] >= movb[i])
 				moves = movb[i] * -1;
-			else
-				moves = mova[i] * -1;
+		else
+			moves = mova[i] * -1;
 		if (moves < best)
 		{
 			line = i;

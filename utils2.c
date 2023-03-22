@@ -6,31 +6,40 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 20:22:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/22 16:50:55 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/22 18:57:39 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_position(t_stack *stack, int nbr)
+void	ft_whichalf(t_stack **a, t_stack **b, int pos, int size)
 {
-	int	pos;
-
-	pos = 1;
-	while (stack->nbr != nbr)
+	if (pos > (size / 2))
 	{
-		stack = stack->next;
-		pos++;
+		while (pos <= size)
+		{
+			rrarrb (a, 'a');
+			pos++;
+		}
+		papb (a, b, 'b');
 	}
-	return (pos);
+	else
+	{
+		while (pos > 1)
+		{
+			rarb (a, 'a');
+			pos--;
+		}
+		papb (a, b, 'b');
+	}
 }
 
 int	ft_position2(t_stack *stack, int nbr)
 {
-	int pos;
+	int	pos;
 
 	pos = 0;
-	while(stack)
+	while (stack)
 	{
 		if (nbr < stack->nbr && stack->nbr == ft_minimum2(stack, nbr))
 			return (pos);
@@ -41,4 +50,23 @@ int	ft_position2(t_stack *stack, int nbr)
 			pos++;
 		stack = stack->next;
 	}
+}
+
+//	ritornare lo stack->nbr successivamente maggiore di nbr, altrimenti nbr
+int	ft_minimum2(t_stack *stack, int nbr)
+{
+	int	min;
+	int	next_min;
+
+	if (nbr >= ft_maximum(stack))
+		return (ft_minimum(stack));
+	min = nbr;
+	next_min = ft_maximum(stack);
+	while (stack)
+	{
+		if (stack->nbr > nbr && stack->nbr < next_min)
+			next_min = stack->nbr;
+		stack = stack->next;
+	}
+	return (next_min);
 }
