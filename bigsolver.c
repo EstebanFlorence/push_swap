@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:37:55 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/22 19:03:25 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/23 02:02:15 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_moves(t_stack **a, t_stack **b)
 {
+	int	i;
 	int	sizeb;
 	int	*mova;
 	int	*movb;
-	int	i;
 
 	i = 0;
 	sizeb = ft_lstsize(*b);
@@ -33,9 +33,9 @@ void	ft_moves(t_stack **a, t_stack **b)
 			mova[i] = ft_position2(*a, (*b)->nbr);
 		else
 			mova[i] = ft_position2(*a, (*b)->nbr) - ft_lstsize(*a);
+		i++;
 		printf("MOVA: %d\n", mova[i]);
 		printf("MOVB: %d\n", movb[i]);
-		i++;
 		*b = (*b)->next;
 	}
 	i = ft_findbestmoves(mova, movb);
@@ -43,6 +43,8 @@ void	ft_moves(t_stack **a, t_stack **b)
 	free (mova);
 	free (movb);
 }
+
+
 
 int	ft_findbestmoves(int *mova, int *movb)
 {
@@ -55,20 +57,8 @@ int	ft_findbestmoves(int *mova, int *movb)
 	best = INT_MAX;
 	while (mova[i])
 	{
-		if (mova[i] >= 0 && movb[i] >= 0)
-			if (mova[i] >= movb[i])
-				moves = mova[i];
-		else
-			moves = movb[i];
-		if (mova[i] < 0 && movb[i] >= 0)
-			moves = (mova[i] * -1) + movb[i];
-		if (mova[i] >= 0 && movb[i] < 0)
-			moves = mova[i] + (movb[i] * -1);
-		if (mova[i] < 0 && movb[i] < 0)
-			if (mova[i] >= movb[i])
-				moves = movb[i] * -1;
-		else
-			moves = mova[i] * -1;
+		movcases1(mova, movb, i, moves);
+		movcases2(mova, movb, i, moves);
 		if (moves < best)
 		{
 			line = i;
@@ -81,12 +71,5 @@ int	ft_findbestmoves(int *mova, int *movb)
 
 void	ft_makebestmoves(int mova, int movb)
 {
-	int	i;
-	int	sum;
 
-	i = 0;
-/* 	while ()
-	{
-		sum = mova + movb;
-	} */
 }
