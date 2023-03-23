@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 20:22:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/23 02:04:32 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/23 19:20:18 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_position2(t_stack *stack, int nbr)
 			i++;
 		stack = stack->next;
 	}
-	return (i);
+	//return (i);
 }
 
 //	ritornare lo stack->nbr successivamente maggiore di nbr, altrimenti nbr

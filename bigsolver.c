@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:37:55 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/23 18:30:54 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/23 19:26:26 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	ft_moves(t_stack **a, t_stack **b)
 			mova[i] = ft_position2(*a, (*b)->nbr);
 		else
 			mova[i] = ft_position2(*a, (*b)->nbr) - ft_lstsize(*a);
-		i++;
 		printf("MOVA: %d\n", mova[i]);
 		printf("MOVB: %d\n", movb[i]);
+		i++;
 		*b = (*b)->next;
 	}
 	i = ft_findbestmoves(mova, movb);
