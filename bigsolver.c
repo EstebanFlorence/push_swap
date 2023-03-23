@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:37:55 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/23 19:26:26 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/23 23:23:03 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 void	ft_moves(t_stack **a, t_stack **b)
 {
-	int	i;
-	int	sizeb;
-	int	*mova;
-	int	*movb;
+	int		i;
+	int		sizeb;
+	int		*mova;
+	int		*movb;
+	t_stack	*tmpb;
 
 	i = 0;
 	sizeb = ft_lstsize(*b);
 	mova = (int *)malloc(sizeb * sizeof(int));
 	movb = (int *)malloc(sizeb * sizeof(int));
-	while (*b)
+	tmpb = *b;
+	while (tmpb)
 	{
 		if (i <= sizeb / 2)
 			movb[i] = i;
@@ -36,7 +38,7 @@ void	ft_moves(t_stack **a, t_stack **b)
 		printf("MOVA: %d\n", mova[i]);
 		printf("MOVB: %d\n", movb[i]);
 		i++;
-		*b = (*b)->next;
+		tmpb = tmpb->next;
 	}
 	i = ft_findbestmoves(mova, movb);
 	ft_makebestmoves(a, b, mova[i], movb[i]);
