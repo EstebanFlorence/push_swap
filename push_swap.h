@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/23 02:03:10 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/23 18:33:39 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ void		ft_solve5to50(t_stack **a, t_stack **b, int size);
 
 
 void		ft_moves(t_stack **a, t_stack **b);
-int			ft_findbestmoves(int *mova, int *movb);
-void		ft_makebestmoves(int mova, int movb);
 void		movcases1(int *mova, int *movb, int i, int moves);
 void		movcases2(int *mova, int *movb, int i, int moves);
+int			ft_findbestmoves(int *mova, int *movb);
+void		ft_makebestmoves(t_stack **a, t_stack **b, int x, int y);
 
 
 //	UTILS
@@ -74,6 +74,12 @@ void		papb(t_stack **a, t_stack **b, char c);
 void		ss(t_stack **a, t_stack **b);
 void		rr(t_stack **a, t_stack **b);
 void		rrr(t_stack **a, t_stack **b);
+
+void		move_plusplus(t_stack **a, t_stack **b, int x, int y);
+void		move_plusminus(t_stack **a, t_stack **b, int x, int y);
+void		move_minusplus(t_stack **a, t_stack **b, int x, int y);
+void		move_minusminus(t_stack **a, t_stack **b, int x, int y);
+
 
 void		ft_test(t_stack *stack);
 
