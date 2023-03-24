@@ -5,12 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/24 17:18:00 by adi-nata          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2023/03/24 15:12:59 by adi-nata         ###   ########.fr       */
-=======
-/*   Updated: 2023/03/23 23:26:22 by adi-nata         ###   ########.fr       */
->>>>>>> refs/remotes/origin/main
+/*   Created: 2023/03/24 19:08:25 by adi-nata          #+#    #+#             */
+/*   Updated: 2023/03/24 19:09:24 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +44,7 @@ void	minisolver(t_stack **a, t_stack **b, int size)
 	else if (size <= 50)
 		ft_solve5to50 (a, b, size);
 }
+
 
 void	bigsolver(t_stack **a, t_stack **b, int size)
 {
