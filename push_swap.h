@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/23 18:33:39 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/24 15:10:56 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void		ft_makebestmoves(t_stack **a, t_stack **b, int x, int y);
 //	UTILS
 
 int			ft_minimum(t_stack *stack);
-int			ft_nextminimum(t_stack *stack, int nbr);
+int			ft_nextmaximum(t_stack *stack, int nbr);
 int			ft_maximum(t_stack *stack);
 void		ft_addfirstnbr(t_stack **stack, int n);
 void		ft_rmfirstnbr(t_stack **stack);

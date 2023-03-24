@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 20:22:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/23 19:20:18 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/24 18:00:17 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,42 +34,47 @@ void	ft_whichalf(t_stack **a, t_stack **b, int pos, int size)
 	}
 }
 
+//	ritorna i => la pos del stack->nbr che va in cima
 int	ft_position2(t_stack *stack, int nbr)
 {
 	int	i;
 
 	i = 0;
+	if (nbr >= ft_maximum(stack))
+		return (ft_position(stack, ft_minimum(stack)));
 	while (stack)
 	{
-		if (nbr < stack->nbr && stack->nbr == ft_nextminimum(stack, nbr))
+		if (stack->nbr == ft_nextmaximum(stack, nbr))
+			return (i);
+/* 		if (nbr < stack->nbr && stack->nbr == ft_nextmaximum(stack, nbr))
 			return (i);
 		if (nbr > stack->nbr && nbr > stack->next->nbr \
 				|| nbr > stack->nbr && !stack->next)
-			return (i + 1);
+			return (i + 1); */
 		else
 			i++;
 		stack = stack->next;
 	}
-	//return (i);
+	return (i);
 }
 
 //	ritornare lo stack->nbr successivamente maggiore di nbr, altrimenti nbr
-int	ft_nextminimum(t_stack *stack, int nbr)
+int	ft_nextmaximum(t_stack *stack, int nbr)
 {
 	int	min;
-	int	next_min;
+	int	next_max;
 
-	if (nbr >= ft_maximum(stack))
-		return (ft_minimum(stack));
+/* 	if (nbr >= ft_maximum(stack))
+		return (ft_minimum(stack)); */
 	min = nbr;
-	next_min = ft_maximum(stack);
+	next_max = ft_maximum(stack);
 	while (stack)
 	{
-		if (stack->nbr > nbr && stack->nbr < next_min)
-			next_min = stack->nbr;
+		if (stack->nbr > nbr && stack->nbr < next_max)
+			next_max = stack->nbr;
 		stack = stack->next;
 	}
-	return (next_min);
+	return (next_max);
 }
 
 void	movcases1(int *mova, int *movb, int i, int moves)
