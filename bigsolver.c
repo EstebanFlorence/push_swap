@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:39 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/25 19:54:39 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/25 20:29:36 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,11 @@ void	ft_moves(t_stack **a, t_stack **b)
 	int		sizeb;
 	int		*mova;
 	int		*movb;
-	//t_stack	*tmpb;
 
 	i = 0;
 	sizeb = ft_lstsize(*b);
 	mova = (int *)malloc(sizeb * sizeof(int));
 	movb = (int *)malloc(sizeb * sizeof(int));
-	//tmpb = *b;
-/* 	while (tmpb)
-	{
-		if (i <= sizeb / 2)
-			movb[i] = i;
-		else
-			movb[i] = i - sizeb;
-		if (ft_position2(*a, (tmpb->nbr)) <= ft_lstsize(*a) / 2)
-			mova[i] = ft_position2(*a, tmpb->nbr);
-		else
-			mova[i] = ft_position2(*a, tmpb->nbr) - ft_lstsize(*a);
-		i++;
-		tmpb = tmpb->next;
-	} */
 	ft_calculator(a, b, mova, movb);
 	i = ft_findbestmoves(mova, movb, sizeb);
 	ft_makebestmoves(a, b, mova[i], movb[i]);
@@ -64,8 +49,6 @@ void	ft_calculator(t_stack **a, t_stack **b, int *mova, int *movb)
 			mova[i] = ft_position2(*a, tmpb->nbr);
 		else
 			mova[i] = ft_position2(*a, tmpb->nbr) - ft_lstsize(*a);
-		printf("MOVA: %d\n", mova[i]);
-		printf("MOVB: %d\n", movb[i]);
 		i++;
 		tmpb = tmpb->next;
 	}
