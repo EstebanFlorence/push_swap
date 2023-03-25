@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 20:22:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/24 19:32:43 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/25 19:00:52 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,4 +101,18 @@ void	movcases2(int *mova, int *movb, int i, int moves)
 	}
 	else if (mova[i] >= 0 && movb[i] < 0)
 		moves = mova[i] + (movb[i] * -1);
+}
+
+void	ft_order(t_stack *stack, int size)
+{
+	if (ft_position(stack, ft_minimum(stack)) > (size / 2))
+	{
+		while (stack->nbr != ft_minimum(stack))
+			rrarrb(&stack, 'a');
+	}
+	else
+	{
+		while (stack->nbr != ft_minimum(stack))
+			rarb(&stack, 'a');
+	}
 }
