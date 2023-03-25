@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/24 15:10:56 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/25 17:19:16 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void		ft_solve5to50(t_stack **a, t_stack **b, int size);
 void		ft_moves(t_stack **a, t_stack **b);
 void		movcases1(int *mova, int *movb, int i, int moves);
 void		movcases2(int *mova, int *movb, int i, int moves);
-int			ft_findbestmoves(int *mova, int *movb);
+int			ft_findbestmoves(int *mova, int *movb, int sizeb);
 void		ft_makebestmoves(t_stack **a, t_stack **b, int x, int y);
 
 

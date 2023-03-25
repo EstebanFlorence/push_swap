@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:39 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/24 19:24:49 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/25 17:19:33 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_moves(t_stack **a, t_stack **b)
 		i++;
 		tmpb = tmpb->next;
 	}
-	i = ft_findbestmoves(mova, movb);
+	i = ft_findbestmoves(mova, movb, sizeb);
 	ft_makebestmoves(a, b, mova[i], movb[i]);
 	free (mova);
 	free (movb);
@@ -48,7 +48,7 @@ void	ft_moves(t_stack **a, t_stack **b)
 
 
 
-int	ft_findbestmoves(int *mova, int *movb)
+int	ft_findbestmoves(int *mova, int *movb, int sizeb)
 {
 	int		i;
 	int		best;
@@ -57,7 +57,7 @@ int	ft_findbestmoves(int *mova, int *movb)
 
 	i = 0;
 	best = INT_MAX;
-	while (mova[i])
+	while (i < sizeb)
 	{
 		movcases1(mova, movb, i, moves);
 		movcases2(mova, movb, i, moves);

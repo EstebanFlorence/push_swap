@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:25 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/24 19:09:24 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/25 17:52:42 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ void	bigsolver(t_stack **a, t_stack **b, int size)
 	ft_nonlis(a, b, listruct, lis);
 	while(ft_lstsize(*b))
 		ft_moves(a, b);
-	
+	while ((*a)->nbr != ft_minimum(*a))
+		
 	ft_test(*a);
 	ft_test(*b);
 	
