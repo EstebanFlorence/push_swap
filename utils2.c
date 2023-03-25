@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 20:22:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/25 19:00:52 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/25 19:21:56 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,6 @@ int	ft_position2(t_stack *stack, int nbr)
 	{
 		if (stack->nbr == ft_nextmaximum(stack, nbr))
 			return (i);
-/* 		if (nbr < stack->nbr && stack->nbr == ft_nextmaximum(stack, nbr))
-			return (i);
-		if (nbr > stack->nbr && nbr > stack->next->nbr \
-				|| nbr > stack->nbr && !stack->next)
-			return (i + 1); */
 		else
 			i++;
 		stack = stack->next;
@@ -64,8 +59,6 @@ int	ft_nextmaximum(t_stack *stack, int nbr)
 	int	min;
 	int	next_max;
 
-/* 	if (nbr >= ft_maximum(stack))
-		return (ft_minimum(stack)); */
 	min = nbr;
 	next_max = ft_maximum(stack);
 	while (stack)
@@ -75,32 +68,6 @@ int	ft_nextmaximum(t_stack *stack, int nbr)
 		stack = stack->next;
 	}
 	return (next_max);
-}
-
-void	movcases1(int *mova, int *movb, int i, int moves)
-{
-	if (mova[i] >= 0 && movb[i] >= 0)
-	{
-		if (mova[i] >= movb[i])
-			moves = mova[i];
-		else
-			moves = movb[i];
-	}
-	else if (mova[i] < 0 && movb[i] >= 0)
-		moves = (mova[i] * -1) + movb[i];
-}
-
-void	movcases2(int *mova, int *movb, int i, int moves)
-{
-	if (mova[i] < 0 && movb[i] < 0)
-	{
-		if (mova[i] >= movb[i])
-			moves = movb[i] * -1;
-		else
-			moves = mova[i] * -1;
-	}
-	else if (mova[i] >= 0 && movb[i] < 0)
-		moves = mova[i] + (movb[i] * -1);
 }
 
 void	ft_order(t_stack *stack, int size)

@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:25 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/25 19:02:31 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/25 19:30:14 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	minisolver(t_stack **a, t_stack **b, int size)
 		ft_solve5to50 (a, b, size);
 }
 
-
 void	bigsolver(t_stack **a, t_stack **b, int size)
 {
 	int		i;
@@ -57,21 +56,10 @@ void	bigsolver(t_stack **a, t_stack **b, int size)
 	listruct = (t_lis *)malloc(sizeof(t_lis));
 	ft_lisinnit(listruct, a, size);
 	ft_lis(listruct, a, &lis, size);
-
-	while (i < listruct->lislen)
-	{
-		ft_printf("%d\n", lis[i]);
-		i++;
-	}
-
 	ft_nonlis(a, b, listruct, lis);
-	while(ft_lstsize(*b))
+	while (ft_lstsize(*b))
 		ft_moves(a, b);
 	ft_order(*a, size);
-
-	ft_test(*a);
-	ft_test(*b);
-	
 	ft_freelis(listruct);
 	free (lis);
 }
@@ -87,11 +75,9 @@ int	main(int ac, char **av)
 	size = 0;
 	ft_stackinit (ac, av, &a);
 	size = ft_lstsize (a);
-	//ft_test(a);
 	if (size < 6)
 		minisolver(&a, &b, size);
 	else
 		bigsolver(&a, &b, size);
-	//ft_test(a);
 	return (0);
 }

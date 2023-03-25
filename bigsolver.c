@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:39 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/25 17:19:33 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/25 19:54:39 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,41 @@ void	ft_moves(t_stack **a, t_stack **b)
 	int		sizeb;
 	int		*mova;
 	int		*movb;
-	t_stack	*tmpb;
+	//t_stack	*tmpb;
 
 	i = 0;
 	sizeb = ft_lstsize(*b);
 	mova = (int *)malloc(sizeb * sizeof(int));
 	movb = (int *)malloc(sizeb * sizeof(int));
+	//tmpb = *b;
+/* 	while (tmpb)
+	{
+		if (i <= sizeb / 2)
+			movb[i] = i;
+		else
+			movb[i] = i - sizeb;
+		if (ft_position2(*a, (tmpb->nbr)) <= ft_lstsize(*a) / 2)
+			mova[i] = ft_position2(*a, tmpb->nbr);
+		else
+			mova[i] = ft_position2(*a, tmpb->nbr) - ft_lstsize(*a);
+		i++;
+		tmpb = tmpb->next;
+	} */
+	ft_calculator(a, b, mova, movb);
+	i = ft_findbestmoves(mova, movb, sizeb);
+	ft_makebestmoves(a, b, mova[i], movb[i]);
+	free (mova);
+	free (movb);
+}
+
+void	ft_calculator(t_stack **a, t_stack **b, int *mova, int *movb)
+{
+	int		i;
+	int		sizeb;
+	t_stack	*tmpb;
+
+	i = 0;
+	sizeb = ft_lstsize(*b);
 	tmpb = *b;
 	while (tmpb)
 	{
@@ -40,45 +69,16 @@ void	ft_moves(t_stack **a, t_stack **b)
 		i++;
 		tmpb = tmpb->next;
 	}
-	i = ft_findbestmoves(mova, movb, sizeb);
-	ft_makebestmoves(a, b, mova[i], movb[i]);
-	free (mova);
-	free (movb);
-}
-
-
-
-int	ft_findbestmoves(int *mova, int *movb, int sizeb)
-{
-	int		i;
-	int		best;
-	int		line;
-	int		moves;
-
-	i = 0;
-	best = INT_MAX;
-	while (i < sizeb)
-	{
-		movcases1(mova, movb, i, moves);
-		movcases2(mova, movb, i, moves);
-		if (moves < best)
-		{
-			line = i;
-			best = moves;
-		}
-		i++;
-	}
-	return (line);
 }
 
 void	ft_makebestmoves(t_stack **a, t_stack **b, int x, int y)
 {
 	if (x >= 0 && y >= 0)
-		move_plusplus(a, b, x, y);
-	if(x >= 0 && y < 0)
-		move_plusminus(a, b, x, y);
-	if(x < 0 && y >= 0)
-		move_minusplus(a, b, x, y);
-	if(x < 0 && y < 0)
-		move_minusminus(a, b, x, y);
+		move_plusplus (a, b, x, y);
+	if (x >= 0 && y < 0)
+		move_plusminus (a, b, x, y);
+	if (x < 0 && y >= 0)
+		move_minusplus (a, b, x, y);
+	if (x < 0 && y < 0)
+		move_minusminus (a, b, x, y);
 }
