@@ -6,14 +6,17 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:15:52 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/25 19:18:26 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/26 19:12:17 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	movcases1(int *mova, int *movb, int i, int moves)
+int	movcases(int *mova, int *movb, int i)
 {
+	int	moves;
+
+	moves = 0;
 	if (mova[i] >= 0 && movb[i] >= 0)
 	{
 		if (mova[i] >= movb[i])
@@ -23,11 +26,7 @@ void	movcases1(int *mova, int *movb, int i, int moves)
 	}
 	else if (mova[i] < 0 && movb[i] >= 0)
 		moves = (mova[i] * -1) + movb[i];
-}
-
-void	movcases2(int *mova, int *movb, int i, int moves)
-{
-	if (mova[i] < 0 && movb[i] < 0)
+	else if (mova[i] < 0 && movb[i] < 0)
 	{
 		if (mova[i] >= movb[i])
 			moves = movb[i] * -1;
@@ -36,6 +35,7 @@ void	movcases2(int *mova, int *movb, int i, int moves)
 	}
 	else if (mova[i] >= 0 && movb[i] < 0)
 		moves = mova[i] + (movb[i] * -1);
+	return (moves);
 }
 
 int	ft_findbestmoves(int *mova, int *movb, int sizeb)
@@ -49,8 +49,7 @@ int	ft_findbestmoves(int *mova, int *movb, int sizeb)
 	best = INT_MAX;
 	while (i < sizeb)
 	{
-		movcases1(mova, movb, i, moves);
-		movcases2(mova, movb, i, moves);
+		moves = movcases(mova, movb, i);
 		if (moves < best)
 		{
 			line = i;
