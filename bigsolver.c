@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:39 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/26 18:41:31 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/26 21:47:37 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void	ft_calculator(t_stack **a, t_stack **b, int *mova, int *movb)
 			mova[i] = ft_position2(*a, tmpb->nbr);
 		else
 			mova[i] = ft_position2(*a, tmpb->nbr) - ft_lstsize(*a);
-		ft_printf("MOVA: %+d\n", mova[i]);
-		ft_printf("MOVB: %+d\n", movb[i]);
+		//ft_printf("MOVA: %+d\n", mova[i]);
+		//ft_printf("MOVB: %+d\n", movb[i]);
 		i++;
 		tmpb = tmpb->next;
 	}
