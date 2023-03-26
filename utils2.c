@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 20:22:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/26 18:26:46 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/26 22:34:08 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	ft_whichalf(t_stack **a, t_stack **b, int pos, int size)
 	}
 }
 
-//	ritorna i => la pos del stack->nbr che va in cima
 int	ft_position2(t_stack *stack, int nbr)
 {
 	int	i;
@@ -53,7 +52,6 @@ int	ft_position2(t_stack *stack, int nbr)
 	return (i);
 }
 
-//	ritornare lo stack->nbr successivamente maggiore di nbr, altrimenti nbr
 int	ft_nextmaximum(t_stack *stack, int nbr)
 {
 	int	min;

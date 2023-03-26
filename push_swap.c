@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:25 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/26 18:30:27 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/26 22:43:44 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,6 @@ void	ft_stackinit(int ac, char **av, t_stack **stack)
 	}
 }
 
-void	ft_test(t_stack *stack)
-{
-	while (stack)
-	{
-		ft_printf("%d\n", stack->nbr);
-		stack = stack->next;
-	}
-}
-
 void	minisolver(t_stack **a, t_stack **b, int size)
 {
 	if (size == 2)
@@ -41,8 +32,8 @@ void	minisolver(t_stack **a, t_stack **b, int size)
 		ft_solve3 (a);
 	else if (size == 4)
 		ft_solve4 (a, b);
-	else if (size <= 50)
-		ft_solve5to50 (a, b, size);
+	else if (size ==5)
+		ft_solve5 (a, b, size);
 }
 
 void	bigsolver(t_stack **a, t_stack **b, int size)

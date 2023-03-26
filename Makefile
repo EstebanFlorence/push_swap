@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/10 18:13:54 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/23 18:35:57 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/26 22:38:13 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,12 +21,13 @@ FLAGS	= -Wall -Wextra -Werror -g -Ilibft/include/
 FIRST	= make -C ./libft/
 
 SRCS	= push_swap.c\
-			utilis.c\
 			utils.c\
 			utils2.c\
+			utilis.c\
+			utilis2.c\
 			moves.c\
 			moves2.c\
-			moveslis.c\
+			moves3.c\
 			minisolver.c\
 			bigsolver.c
 

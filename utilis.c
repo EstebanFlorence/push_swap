@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:27:13 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/25 19:21:24 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/26 22:47:18 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	ft_lis(t_lis *listruct, t_stack **stack, int **lis, int size)
 	t_stack	*tmpstack;
 
 	tmpstack = (*stack)->next;
-	ft_lislen(stack, tmpstack, listruct, size);
+	ft_lislen(tmpstack, listruct);
 	tmpstack = *stack;
 	ft_lisarr(stack, tmpstack, listruct, lis);
 	listruct->lislen++;
 }
 
-void	ft_lislen(t_stack **stack, t_stack *tmpstack, t_lis *listruct, int size)
+void	ft_lislen(t_stack *tmpstack, t_lis *listruct)
 {
 	int		i;
 

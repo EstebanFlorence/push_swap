@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 23:21:55 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/13 18:56:27 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/26 22:43:55 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	ft_putback(t_stack **a, t_stack **b, int size, int tmpsize)
 	}
 }
 
-void	ft_solve5to50(t_stack **a, t_stack **b, int size)
+void	ft_solve5(t_stack **a, t_stack **b, int size)
 {
 	int		pos;
 	int		min;

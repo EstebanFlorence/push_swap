@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/26 19:12:28 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/26 22:47:34 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,11 @@ void		ft_solve4(t_stack **a, t_stack **b);
 void		ft_solve5(t_stack **a, t_stack **b, int size);
 void		ft_solve5to50(t_stack **a, t_stack **b, int size);
 
-
 void		ft_moves(t_stack **a, t_stack **b);
 int			movcases(int *mova, int *movb, int i);
 int			ft_findbestmoves(int *mova, int *movb, int sizeb);
 void		ft_makebestmoves(t_stack **a, t_stack **b, int x, int y);
 void		ft_calculator(t_stack **a, t_stack **b, int *mova, int *movb);
-
 
 //	UTILS
 
@@ -59,7 +57,7 @@ void		ft_order(t_stack **stack, int size);
 
 void		ft_lis(t_lis *listruct, t_stack **stack, int **lis, int size);
 void		ft_lisinnit(t_lis *listruct, t_stack **stack, int size);
-void		ft_lislen(t_stack **stack, t_stack *tmpstack, t_lis *listruct, int size);
+void		ft_lislen(t_stack *tmpstack, t_lis *listruct);
 int			searchreplace(int *lis, int start, int i, int nbr);
 void		ft_lisarr(t_stack **stack, t_stack *tmpstack, t_lis *listruct, int **lis);
 void		ft_nonlis(t_stack **a, t_stack **b, t_lis *listruct, int *lis);
@@ -81,7 +79,5 @@ void		move_plusminus(t_stack **a, t_stack **b, int x, int y);
 void		move_minusplus(t_stack **a, t_stack **b, int x, int y);
 void		move_minusminus(t_stack **a, t_stack **b, int x, int y);
 
-
-void		ft_test(t_stack *stack);
 
 #endif
