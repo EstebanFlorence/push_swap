@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:25 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/25 19:30:14 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/26 00:14:15 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,19 @@ void	bigsolver(t_stack **a, t_stack **b, int size)
 {
 	int		i;
 	int		*lis;
+	//t_stack	*tmpa;
 	t_lis	*listruct;
 
 	i = 0;
 	lis = NULL;
+	//tmpa = *a;
 	listruct = (t_lis *)malloc(sizeof(t_lis));
 	ft_lisinnit(listruct, a, size);
 	ft_lis(listruct, a, &lis, size);
 	ft_nonlis(a, b, listruct, lis);
 	while (ft_lstsize(*b))
 		ft_moves(a, b);
-	ft_order(*a, size);
+	ft_order(a, size);
 	ft_freelis(listruct);
 	free (lis);
 }
