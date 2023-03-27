@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/10 18:13:54 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/26 23:54:54 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/27 16:11:25 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM	    = rm -f
 
 FLAGS	= -Wall -Wextra -Werror -Ilibft/include
 
-FIRST	= make -C ./libft/
+FIRST	= 
 
 SRCS	= push_swap.c\
 			utils.c\
@@ -37,7 +37,8 @@ OBJS	= ${SRCS:.c=.o}
 		${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-			
+		make -C ./libft
+		${CC} ${FLAGS} ${OBJS} -o ${NAME} ./libft/libft.a
 
 
 all:	${NAME}

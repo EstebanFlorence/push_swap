@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:16:38 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/21 16:24:51 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:22:26 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,9 @@
 void	ft_nonlis(t_stack **a, t_stack **b, t_lis *listruct, int *lis)
 {
 	int		i;
-	int		pos;
-	int		stay;
 	t_stack	*tmpstack;
 
 	i = 0;
-	pos = 1;
-	stay = 0;
 	tmpstack = *a;
 	while (listruct->stacklen > listruct->lislen)
 	{

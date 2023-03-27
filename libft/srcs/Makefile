@@ -6,11 +6,11 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/24 18:58:26 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/26 23:13:57 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/27 16:10:08 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= ../include/libft.a
+NAME	= ../include/ft_libft.a
 
 SRC	= ft_isalpha.c\
 		ft_isdigit.c\
@@ -72,6 +72,7 @@ FLAGS	= -Wall -Wextra -Werror -I../include
 
 ${NAME}:		${OBJS}
 				ar rcs ${NAME} ${OBJS}
+				ranlib ${NAME}
 
 all: 		${NAME}
 

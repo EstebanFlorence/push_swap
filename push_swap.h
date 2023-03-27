@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/26 23:07:44 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:18:00 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_lis
 void		ft_stackinit(int ac, char **av, t_stack **stack);
 void		minisolver(t_stack **a, t_stack **b, int size);
 void		bigsolver(t_stack **a, t_stack **b, int size);
+void		ft_freestack(t_stack *stack);
 
 void		ft_solve2(t_stack **stack);
 void		ft_solve3(t_stack **stack);

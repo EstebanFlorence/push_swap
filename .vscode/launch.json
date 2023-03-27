@@ -1,16 +1,31 @@
 {
-	"configurations": [
-	{
-		"name": "(lldb) Launch",
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [ {
+		"name": "(gdb) Launch",
 		"type": "cppdbg",
 		"request": "launch",
 		"program": "${workspaceFolder}/push_swap",
-		"args": ["952","635","812","285","782","36","67","193","583","31","144","565","112","148","636","286","155","190","10","197"],
+		"args": ["3","2","1","5","9","6"],
 		"stopAtEntry": false,
 		"cwd": "${fileDirname}",
 		"environment": [],
 		"externalConsole": false,
-		"MIMode": "lldb"
+		"MIMode": "gdb",
+		"setupCommands": [
+			{
+				"description": "Enable pretty-printing for gdb",
+				"text": "-enable-pretty-printing",
+				"ignoreFailures": true
+			},
+			{
+				"description": "Set Disassembly Flavor to Intel",
+				"text": "-gdb-set disassembly-flavor intel",
+				"ignoreFailures": true
+			}
+		]
 	}
 	]
 }

@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 20:22:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/26 22:34:08 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/27 12:53:14 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,8 @@ int	ft_position2(t_stack *stack, int nbr)
 
 int	ft_nextmaximum(t_stack *stack, int nbr)
 {
-	int	min;
 	int	next_max;
 
-	min = nbr;
 	next_max = ft_maximum(stack);
 	while (stack)
 	{
