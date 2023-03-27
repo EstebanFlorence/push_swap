@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/24 18:58:26 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/08 02:56:40 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/26 23:13:57 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ SRC	= ft_isalpha.c\
 		ft_putnbr.c\
 		ft_putnbr_fd.c\
 		ft_split.c\
-		ft_itoa.c
+		ft_itoa.c\
 		ft_lstnew.c\
 		ft_lstadd_front.c\
 		ft_lstsize.c\
@@ -57,7 +57,6 @@ SRC	= ft_isalpha.c\
 		ft_lstdelone.c\
 		ft_lstclear.c\
 		ft_lstiter.c\
-		ft_lstmap.c\
 		get_next_line.c
 
 OBJS	= ${SRC:.c=.o}

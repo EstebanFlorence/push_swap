@@ -6,14 +6,14 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/26 23:07:44 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/26 23:43:15 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include "libft/include/libft.h"
-# include "libft/include/ft_printf.h"
+# include "libft.h"
+# include "ft_printf.h"
 
 typedef struct s_lis
 {

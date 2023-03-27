@@ -6,13 +6,13 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:27:13 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/26 22:47:18 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/26 23:06:55 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lis(t_lis *listruct, t_stack **stack, int **lis, int size)
+void	ft_lis(t_lis *listruct, t_stack **stack, int **lis)
 {
 	t_stack	*tmpstack;
 

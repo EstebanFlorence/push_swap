@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:25 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/26 22:43:44 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/26 23:07:17 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	minisolver(t_stack **a, t_stack **b, int size)
 		ft_solve3 (a);
 	else if (size == 4)
 		ft_solve4 (a, b);
-	else if (size ==5)
+	else if (size == 5)
 		ft_solve5 (a, b, size);
 }
 
@@ -46,7 +46,7 @@ void	bigsolver(t_stack **a, t_stack **b, int size)
 	lis = NULL;
 	listruct = (t_lis *)malloc(sizeof(t_lis));
 	ft_lisinnit(listruct, a, size);
-	ft_lis(listruct, a, &lis, size);
+	ft_lis(listruct, a, &lis);
 	ft_nonlis(a, b, listruct, lis);
 	while (ft_lstsize(*b))
 		ft_moves(a, b);
