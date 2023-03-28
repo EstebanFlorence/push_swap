@@ -11,8 +11,9 @@
                 "-Werror",
                 "-g",
                 "-Ilibft/include",
+                "-Iinclude",
                 "*.c",
-				"libft/ft_printf/sources/*.c",
+				"libft/ft_printf/srcs/*.c",
 				"libft/srcs/*.c",
                 "-o",
                 "${fileDirname}/push_swap"

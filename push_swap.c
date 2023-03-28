@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:25 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/27 14:21:22 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/28 12:55:30 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	main(int ac, char **av)
 		minisolver(&a, &b, size);
 	else
 		bigsolver(&a, &b, size);
-	ft_freestack (a);
-	ft_freestack (b);
+	//ft_freestack (a);
+	//ft_freestack (b);
 	return (0);
 }

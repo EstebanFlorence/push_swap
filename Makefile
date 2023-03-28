@@ -5,22 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/10 18:13:54 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/27 16:11:25 by adi-nata         ###   ########.fr        #
+#    Created: 2023/03/28 18:24:03 by adi-nata          #+#    #+#              #
+#    Updated: 2023/03/29 00:17:53 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= push_swap
+NAME	=	push_swap
 
-CC		= gcc
-
-RM	    = rm -f
-
-FLAGS	= -Wall -Wextra -Werror -Ilibft/include
-
-FIRST	= 
-
-SRCS	= push_swap.c\
+SRCS	=	push_swap.c\
 			utils.c\
 			utils2.c\
 			utilis.c\
@@ -31,26 +23,36 @@ SRCS	= push_swap.c\
 			minisolver.c\
 			bigsolver.c
 
-OBJS	= ${SRCS:.c=.o}
+OBJS	=	$(addprefix obj/,$(notdir $(SRCS:.c=.o)))
 
-.c.o:	${FIRST}
-		${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+CC		=	gcc
 
-${NAME}:	${OBJS}
-		make -C ./libft
-		${CC} ${FLAGS} ${OBJS} -o ${NAME} ./libft/libft.a
+RM		=	rm -f
+
+FLAGS	=	-Wall -Wextra -Werror -Ilibft/include/
 
 
-all:	${NAME}
+
+${NAME}:	objs ${OBJS}
+			make -C ./libft
+			${CC} ${FLAGS} ${OBJS} -L./libft/include -lft -o ${NAME}
+
+all:		${NAME}
+
+obj/%.o:	%.c
+			${CC} ${FLAGS} -c $< -o $@
+
+objs:
+			mkdir -p obj
 
 clean:
-			@ ${RM} *.o */*.o */*/*.o
+			${RM} -r obj
 			make clean -C ./libft
 
 fclean:		clean
-			@ ${RM} ${NAME}
+			${RM} ${NAME}
 			make fclean -C ./libft
 
-re:		fclean all
+re:			fclean all
 
-.PHONY:			all clean fclean re bonus bonusclean bonusfclean bonusre
+.PHONY:		all clean fclean re
