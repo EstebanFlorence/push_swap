@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/28 21:24:46 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/29 00:19:31 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/29 13:22:17 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRCS	=	srcs/ft_isalpha.c		srcs/ft_isdigit.c\
 			srcs/ft_lstlast.c		srcs/ft_lstadd_back.c\
 			srcs/ft_lstdelone.c		srcs/ft_lstclear.c\
 			srcs/ft_lstiter.c		srcs/get_next_line.c\
+			\
 			ft_printf/ft_printf.c\
 			ft_printf/syntax.c\
 			ft_printf/checkflags.c\
@@ -60,18 +61,18 @@ FLAGS	=	-Wall -Wextra -Werror -Iinclude/
 
 ${NAME}:	${OBJS}
 
-			ar rcs ${NAME} ${OBJS}
+			@ar rcs ${NAME} ${OBJS}
 
 all:		${NAME}
 
 .c.o:
-			${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+			@${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
 clean:
-			${RM} *.o */*.o */*/*.o
+			@${RM} *.o */*.o */*/*.o
 
 fclean:		clean
-			${RM} ${NAME}
+			@${RM} ${NAME}
 
 re:			fclean all
 

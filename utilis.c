@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:27:13 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/27 15:01:24 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/29 17:26:40 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_lislen(t_stack *tmpstack, t_lis *listruct)
 {
 	int		i;
 
-	i = 0;
+	i = 1;
 	while (tmpstack)
 	{
 		listruct->index[i] = \

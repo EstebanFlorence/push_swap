@@ -13,7 +13,7 @@
                 "-Ilibft/include",
                 "-Iinclude",
                 "*.c",
-				"libft/ft_printf/srcs/*.c",
+				"libft/ft_printf/*.c",
 				"libft/srcs/*.c",
                 "-o",
                 "${fileDirname}/push_swap"
