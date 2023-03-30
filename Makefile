@@ -6,13 +6,14 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/28 18:24:03 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/30 18:13:27 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/30 23:54:02 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	push_swap
 
 SRCS	=	push_swap.c\
+			check.c\
 			utils.c\
 			utils2.c\
 			utilis.c\

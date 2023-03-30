@@ -76,7 +76,6 @@ void	ft_rmfirstnbr(t_stack **stack)
 	{
 		tmp = *stack;
 		(*stack) = (*stack)->next;
-		//tmp->next = NULL;
 		free (tmp);
 		(*stack)->prev = NULL;
 	}

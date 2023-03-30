@@ -41,7 +41,7 @@ void	ft_stayornot(t_stack **a, t_stack **b, t_stack **tmpstack, \
 	if (!listruct->stay)
 	{
 		pos = ft_position(*a, (*tmpstack)->nbr);
-		ft_whichalf(a, b, pos, listruct->stacklen);\
+		ft_whichalf(a, b, pos, listruct->stacklen);
 		*tmpstack = *a;
 		listruct->stacklen--;
 	}
