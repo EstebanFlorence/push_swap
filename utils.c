@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:13:09 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/29 21:50:17 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/30 17:24:03 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,15 @@ void	ft_addfirstnbr(t_stack **stack, int n)
 
 void	ft_rmfirstnbr(t_stack **stack)
 {
-	//t_stack	*tmp;
+	t_stack	*tmp;
 
 	if ((*stack)->next)
 	{
-		//tmp = *stack;
+		tmp = *stack;
 		(*stack) = (*stack)->next;
+		//tmp->next = NULL;
+		free (tmp);
 		(*stack)->prev = NULL;
-		//free (tmp);
 	}
 	else
 	{

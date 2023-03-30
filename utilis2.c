@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:16:38 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/27 15:22:26 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/30 17:30:21 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	ft_stayornot(t_stack **a, t_stack **b, t_stack **tmpstack, \
 	if (!listruct->stay)
 	{
 		pos = ft_position(*a, (*tmpstack)->nbr);
-		ft_whichalf(a, b, pos, listruct->stacklen);
-		*tmpstack = (*tmpstack)->next;
+		ft_whichalf(a, b, pos, listruct->stacklen);\
+		*tmpstack = *a;
 		listruct->stacklen--;
 	}
 	else

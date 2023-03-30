@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:27:13 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/29 17:26:40 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/30 17:06:32 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	ft_lisinnit(t_lis *listruct, t_stack **stack, int size)
 	int	i;
 
 	i = 1;
-	listruct->index = (int *)malloc(size * sizeof(int));
+	listruct->index = (int *)ft_calloc(size, sizeof(int));
 	listruct->tmplis = (int *)malloc(size * sizeof(int));
 	listruct->tmplis[0] = (*stack)->nbr;
 	listruct->lislen = -1;
