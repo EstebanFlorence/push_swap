@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/28 18:24:03 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/29 21:58:42 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/03/30 18:13:27 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ ${NAME}:	objs ${OBJS}
 all:		${NAME}
 
 obj/%.o:	%.c
-			${CC} ${FLAGS} -c $< -o $@
+			@${CC} ${FLAGS} -c $< -o $@
 
 objs:
 			@mkdir -p obj

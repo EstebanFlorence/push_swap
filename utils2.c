@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 20:22:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/27 12:53:14 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/30 18:14:58 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,17 @@ void	ft_order(t_stack **stack, int size)
 	{
 		while ((*stack)->nbr != ft_minimum(*stack))
 			rarb(stack, 'a');
+	}
+}
+
+void	ft_freestack(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	while (stack)
+	{
+		tmp = stack;
+		stack = stack->next;
+		free (tmp);
 	}
 }

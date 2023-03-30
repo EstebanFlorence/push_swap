@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/28 17:52:23 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/30 18:36:34 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_lis
 	int	stay;
 }	t_lis;
 
+void		ft_check(t_stack *stack, int size);
 void		ft_stackinit(int ac, char **av, t_stack **stack);
 void		minisolver(t_stack **a, t_stack **b, int size);
 void		bigsolver(t_stack **a, t_stack **b, int size);
