@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 23:30:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/31 01:38:36 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/31 01:58:40 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ int	ft_check3(t_stack *stack)
 		{
 			if (tmp->nbr == stack->nbr)
 				dub++;
-			if (dub)
+			if (dub > 1)
 			{
 				ft_printf("Error\n");
 				ft_printf("There are duplicates\n");
