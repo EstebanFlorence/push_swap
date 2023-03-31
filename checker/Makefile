@@ -5,24 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/28 18:24:03 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/31 19:31:24 by adi-nata         ###   ########.fr        #
+#    Created: 2023/03/31 19:03:34 by adi-nata          #+#    #+#              #
+#    Updated: 2023/03/31 19:04:16 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	push_swap
+NAME	=	checker
 
 SRCS	=	push_swap.c\
 			check.c\
+			check2.c\
 			utils.c\
 			utils2.c\
-			utilis.c\
-			utilis2.c\
 			moves.c\
-			moves2.c\
-			moves3.c\
-			minisolver.c\
-			bigsolver.c
+			moves2.c
 
 OBJS	=	$(addprefix obj/,$(notdir $(SRCS:.c=.o)))
 
@@ -53,9 +49,6 @@ ${NAME}:	objs ${OBJS}
 			@echo "$(GREEN)$(NAME) created[0m ✔️"
 
 all:		${NAME}
-
-bonus:		${NAME}
-			make -C ./checker
 
 obj/%.o:	%.c
 			@${CC} ${FLAGS} -c $< -o $@
