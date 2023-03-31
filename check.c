@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 23:30:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/31 01:58:40 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/31 02:06:56 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_check1(int ac, char **av)
 
 int	ft_check2(int ac, char **av)
 {
-	int	i;
+	int			i;
 	long int	nbr;
 
 	i = 1;
@@ -72,7 +72,7 @@ long int	ft_atol(const char *nbr)
 
 	sign = 1;
 	res = 0;
-	while (*nbr == ' ' ||
+	while (*nbr == ' ' || \
 			(*nbr >= '\t' && *nbr <= '\r'))
 		nbr++;
 	if (*nbr == '-' || *nbr == '+')
@@ -97,16 +97,15 @@ int	ft_check3(t_stack *stack)
 	t_stack	*tmp;
 	t_stack	*head;
 
-	tmp = stack;
+	tmp = stack->next;
 	head = stack;
-	stack = stack->next;
-	while (stack)
+	while (tmp)
 	{
 		dub = 0;
-		tmp = head;
-		while (tmp)
+		stack = head;
+		while (stack)
 		{
-			if (tmp->nbr == stack->nbr)
+			if (stack->nbr == tmp->nbr)
 				dub++;
 			if (dub > 1)
 			{
@@ -114,9 +113,9 @@ int	ft_check3(t_stack *stack)
 				ft_printf("There are duplicates\n");
 				return (0);
 			}
-			tmp = tmp->next;
+			stack = stack->next;
 		}
-		stack = stack->next;
+		tmp = tmp->next;
 	}
 	return (1);
 }
