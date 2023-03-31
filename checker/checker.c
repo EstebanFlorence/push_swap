@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:25 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/31 15:59:01 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:07:29 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	ft_stackinit(int ac, char **av, t_stack **stack)
 {
@@ -72,11 +72,6 @@ int	main(int ac, char **av)
 		ft_freestack(a);
 		return (0);
 	}
-	size = ft_lstsize (a);
-	if (size < 6)
-		minisolver(&a, &b, size);
-	else
-		bigsolver(&a, &b, size);
 	ft_freestack (a);
 	ft_freestack (b);
 	return (0);
