@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 16:58:22 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/31 17:14:15 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:53:06 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_ordered(t_stack *stack)
 			return (0);
 		tmp = tmp->next;
 	}
-	returnb (1);
+	return (1);
 }
 
 void	ft_execute(t_stack *a, t_stack *b)
@@ -58,6 +58,6 @@ void	ft_read(t_stack *a, t_stack *b)
 	char	*line;
 
 	line = get_next_line(0);
-	if (line == NULL || ft_oredered())
+	if (line == NULL || ft_oredered(a))
 	ft_execute()
 }
