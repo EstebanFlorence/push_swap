@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/31 17:14:24 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/01 18:55:29 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ typedef struct s_lis
 
 t_stack		*ft_last(t_stack *stack);
 void		ft_freechecker(t_stack *a, t_stack *b);
-int			ft_ordered(t_stack *stack);
-void		ft_execute(t_stack *a, t_stack *b);
+int			ft_ordered(t_stack *a, t_stack *b);
+void		ft_execute(t_stack *a, t_stack *b, char *line);
 void		ft_read(t_stack *a, t_stack *b);
 
 
@@ -37,7 +37,6 @@ int			ft_check3(t_stack *stack);
 long int	ft_atol(const char *nbr);
 void		ft_stackinit(int ac, char **av, t_stack **stack);
 void		minisolver(t_stack **a, t_stack **b, int size);
-void		bigsola, t_stack *bver(t_stack **a, t_stack **b, int size);
 void		ft_freestack(t_stack *stack);
 
 void		ft_solve2(t_stack **stack);

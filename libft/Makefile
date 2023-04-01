@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/28 21:24:46 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/29 21:58:49 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/04/01 19:17:25 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRCS	=	srcs/ft_isalpha.c		srcs/ft_isdigit.c\
 			srcs/ft_lstlast.c		srcs/ft_lstadd_back.c\
 			srcs/ft_lstdelone.c		srcs/ft_lstclear.c\
 			srcs/ft_lstiter.c		srcs/get_next_line.c\
+			srcs/ft_strcmp.c\
 			\
 			ft_printf/ft_printf.c\
 			ft_printf/syntax.c\

@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:25 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/31 17:07:29 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/01 20:19:39 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,40 +24,11 @@ void	ft_stackinit(int ac, char **av, t_stack **stack)
 	}
 }
 
-void	minisolver(t_stack **a, t_stack **b, int size)
-{
-	if (size == 2)
-		ft_solve2 (a);
-	else if (size == 3)
-		ft_solve3 (a);
-	else if (size == 4)
-		ft_solve4 (a, b);
-	else if (size == 5)
-		ft_solve5 (a, b, size);
-}
-
-void	bigsolver(t_stack **a, t_stack **b, int size)
-{
-	int		*lis;
-	t_lis	*listruct;
-
-	lis = NULL;
-	listruct = (t_lis *)malloc(sizeof(t_lis));
-	ft_lisinnit(listruct, a, size);
-	ft_lis(listruct, a, &lis);
-	ft_nonlis(a, b, listruct, lis);
-	while (ft_lstsize(*b))
-		ft_moves(a, b);
-	ft_order(a, size);
-	ft_freelis(listruct);
-	free (lis);
-}
-
 int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
-	int		size;
+	//int		size;
 
 	if (!ft_check1(ac, av))
 		return (0);
@@ -65,13 +36,14 @@ int	main(int ac, char **av)
 		return (0);
 	a = NULL;
 	b = NULL;
-	size = 0;
+	//size = 0;
 	ft_stackinit (ac, av, &a);
 	if (!ft_check3(a))
 	{
 		ft_freestack(a);
 		return (0);
 	}
+	ft_read(a, b);
 	ft_freestack (a);
 	ft_freestack (b);
 	return (0);
