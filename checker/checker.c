@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:25 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/01 20:19:39 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/02 02:01:57 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
-	//int		size;
 
 	if (!ft_check1(ac, av))
 		return (0);
@@ -36,15 +35,14 @@ int	main(int ac, char **av)
 		return (0);
 	a = NULL;
 	b = NULL;
-	//size = 0;
 	ft_stackinit (ac, av, &a);
 	if (!ft_check3(a))
 	{
 		ft_freestack(a);
 		return (0);
 	}
-	ft_read(a, b);
-	ft_freestack (a);
-	ft_freestack (b);
+	ft_read(&a, &b);
+	ft_freestack(a);
+	ft_freestack(b);
 	return (0);
 }

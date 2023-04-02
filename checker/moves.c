@@ -6,13 +6,13 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:14:19 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/31 16:56:42 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/02 01:36:33 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	sasb(t_stack **stack, char c)
+void	sasb(t_stack **stack)
 {
 	int	swap;
 
@@ -21,13 +21,9 @@ void	sasb(t_stack **stack, char c)
 	swap = (*stack)->nbr;
 	(*stack)->nbr = (*stack)->next->nbr;
 	(*stack)->next->nbr = swap;
-	if (c == 'a')
-		ft_printf("sa\n");
-	else if (c == 'b')
-		ft_printf("sb\n");
 }
 
-void	rarb(t_stack **stack, char c)
+void	rarb(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack	*rot;
@@ -43,13 +39,9 @@ void	rarb(t_stack **stack, char c)
 	rot->next = NULL;
 	rot->prev = tmp;
 	(*stack)->prev = NULL;
-	if (c == 'a')
-		ft_printf("ra\n");
-	else if (c == 'b')
-		ft_printf("rb\n");
 }
 
-void	rrarrb(t_stack **stack, char c)
+void	rrarrb(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack	*rot;
@@ -68,21 +60,13 @@ void	rrarrb(t_stack **stack, char c)
 	tmp->next = NULL;
 	(*stack)->prev = rot;
 	(*stack) = rot;
-	if (c == 'a')
-		ft_printf ("rra\n");
-	else if (c == 'b')
-		ft_printf ("rrb\n");
 }
 
-void	papb(t_stack **a, t_stack **b, char c)
+void	papb(t_stack **a, t_stack **b)
 {
 	int	n;
 
 	n = (*a)->nbr;
 	ft_addfirstnbr(b, n);
 	ft_rmfirstnbr(a);
-	if (c == 'a')
-		ft_printf("pa\n");
-	else if (c == 'b')
-		ft_printf("pb\n");
 }

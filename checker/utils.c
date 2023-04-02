@@ -6,23 +6,22 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:13:09 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/31 16:57:01 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/02 01:43:38 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int	ft_position(t_stack *stack, int nbr)
+void	ft_freestack(t_stack *stack)
 {
-	int	pos;
+	t_stack	*tmp;
 
-	pos = 1;
-	while (stack->nbr != nbr)
+	while (stack)
 	{
+		tmp = stack;
 		stack = stack->next;
-		pos++;
+		free (tmp);
 	}
-	return (pos);
 }
 
 int	ft_minimum(t_stack *stack)

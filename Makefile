@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/28 18:24:03 by adi-nata          #+#    #+#              #
-#    Updated: 2023/03/31 19:31:24 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/04/02 01:28:07 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,8 @@ FLAGS	=	-g -Wall -Wextra -Werror -Ilibft/include/
 
 LIB		=	libft
 
+BONUS	=	checker
+
 
 CLR_RMV		= \033[0m
 RED		    = \033[1;31m
@@ -54,8 +56,15 @@ ${NAME}:	objs ${OBJS}
 
 all:		${NAME}
 
-bonus:		${NAME}
-			make -C ./checker
+bonus:
+
+			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(LIB) ${CLR_RMV}..."
+			@make -C ./libft
+			@echo "$(GREEN)$(LIB) created[0m ✔️"
+
+			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(BONUS) ${CLR_RMV}..."
+			@make -C ./checker
+			@echo "$(GREEN)$(BONUS) created[0m ✔️"
 
 obj/%.o:	%.c
 			@${CC} ${FLAGS} -c $< -o $@
@@ -70,12 +79,18 @@ clean:
 			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)objs ✔️"
 			@${RM} -r obj
 
+			@ echo "$(RED)Deleting $(CYAN)checker $(CLR_RMV)objs ✔️"
+			@make clean -C ./checker
+
 fclean:		clean
 			@ echo "$(RED)Deleting $(CYAN)$(LIB) $(CLR_RMV)binary ✔️"
 			@make fclean -C ./libft
 
 			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary ✔️"
 			@${RM} ${NAME}
+
+			@ echo "$(RED)Deleting $(CYAN)checker $(CLR_RMV)binary ✔️"
+			@make fclean -C ./checker
 
 re:			fclean all
 

@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 19:03:34 by adi-nata          #+#    #+#              #
-#    Updated: 2023/04/01 20:15:59 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/04/02 01:44:13 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ SRCS	=	checker.c\
 			check.c\
 			check2.c\
 			utils.c\
-			utils2.c\
 			moves.c\
 			moves2.c
 
@@ -40,9 +39,7 @@ CYAN 		= \033[1;36m
 
 
 ${NAME}:	objs ${OBJS}
-			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(NAME) ${CLR_RMV}..."
 			@${CC} ${FLAGS} ${OBJS} ${LIB} -o ${NAME}
-			@echo "$(GREEN)$(NAME) created[0m ✔️"
 
 all:		${NAME}
 
@@ -53,11 +50,9 @@ objs:
 			@mkdir -p obj
 
 clean:
-			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)objs ✔️"
 			@${RM} -r obj
 
 fclean:		clean
-			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary ✔️"
 			@${RM} ${NAME}
 
 re:			fclean all
