@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 23:30:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/03 15:58:51 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/03 19:05:18 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	ft_check1(int ac, char **av)
 			if (!ft_isdigit(av[i][j]) && \
 				(av[i][j] != '+' && av[i][j] != '-'))
 			{
-				ft_printf("Error\n");
-				ft_printf("Some arguments aren’t integers\n");
+				write(STDERR_FILENO, "Error\n", 6);
+				ft_printf("Some arguments aren't integers\n");
 				return (0);
 			}
 			j++;
@@ -49,8 +49,8 @@ int	ft_check2(int ac, char **av)
 		nbr = ft_atol(av[i]);
 		if (nbr < INT_MIN || nbr > INT_MAX)
 		{
-			ft_printf("Error\n");
-			ft_printf("Some arguments are bigger than an integer\n");
+			write(STDERR_FILENO, "Error\n", 6);
+			ft_printf("Some arguments are bigger or less than an integer\n");
 			return (0);
 		}
 		i++;
@@ -100,7 +100,7 @@ int	ft_check3(t_stack *stack)
 				dub++;
 			if (dub > 1)
 			{
-				ft_printf("Error\n");
+				write(STDERR_FILENO, "Error\n", 6);
 				ft_printf("There are duplicates\n");
 				return (0);
 			}

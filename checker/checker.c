@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:25 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/03 16:14:40 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:58:29 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int	main(int ac, char **av)
 	t_stack	*a;
 	t_stack	*b;
 
+	if (ac == 1)
+		return (0);
 	if (!ft_check1(ac, av))
 		return (0);
 	if (!ft_check2(ac, av))
