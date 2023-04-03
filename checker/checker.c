@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:25 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/02 02:01:57 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:14:40 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,30 @@ void	ft_stackinit(int ac, char **av, t_stack **stack)
 	{
 		ft_lstadd_back(stack, ft_lstnew(ft_atoi(av[i])));
 		i++;
+	}
+}
+
+void	ft_read(t_stack **a, t_stack **b)
+{
+	char	*line;
+
+	ft_ordered(a, b);
+	while (1)
+	{
+		line = get_next_line(0);
+		if (line == NULL)
+		{
+			free (line);
+			break ;
+		}
+		ft_execute(a, b, line);
+		free (line);
+	}
+	if (!ft_ordered(a, b))
+	{
+		ft_printf("KO\n");
+		ft_freechecker(a, b);
+		exit (EXIT_FAILURE);
 	}
 }
 

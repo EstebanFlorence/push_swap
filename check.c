@@ -6,18 +6,11 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 23:30:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/01 19:54:41 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/03 15:44:20 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/* 
-In case of error, it must display "Error" followed by a ’\n’ 
-on the standard error. Errors include for example: some arguments 
-aren’t integers,some arguments are bigger than an integer and/or 
-there are duplicates.
- */
 
 int	ft_check1(int ac, char **av)
 {

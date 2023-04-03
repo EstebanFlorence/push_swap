@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/02 02:26:00 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:13:10 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_lis
 t_stack		*ft_last(t_stack *stack);
 void		ft_freechecker(t_stack **a, t_stack **b);
 int			ft_ordered(t_stack **a, t_stack **b);
+void		ft_error(t_stack **a, t_stack **b);
 void		ft_execute(t_stack **a, t_stack **b, char *line);
 void		ft_read(t_stack **a, t_stack **b);
 int			ft_check1(int ac, char **av);
