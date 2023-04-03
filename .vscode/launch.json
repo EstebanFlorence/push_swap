@@ -4,7 +4,7 @@
 		"name": "(lldb) Launch",
 		"type": "cppdbg",
 		"request": "launch",
-		"program": "${workspaceFolder}/checker/checker",
+		"program": "${workspaceFolder}/checker",
 		"args": ["3","1","2"],
 		"stopAtEntry": false,
 		"cwd": "${fileDirname}",

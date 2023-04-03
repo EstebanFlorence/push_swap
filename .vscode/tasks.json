@@ -17,7 +17,7 @@
 				"libft/ft_printf/*.c",
 				"libft/srcs/*.c",
                 "-o",
-                "${fileDirname}/push_swap"
+                "checker"
             ],
             "options": {
                 "cwd": "${fileDirname}"

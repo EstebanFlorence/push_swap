@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 16:58:22 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/02 02:45:09 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/03 00:19:03 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ft_execute(t_stack **a, t_stack **b, char *line)
 void	ft_read(t_stack **a, t_stack **b)
 {
 	char	*line;
-
+	ft_ordered(a, b);
 	line = get_next_line(0);
 	if (line == NULL || ft_ordered(a, b))
 	{
