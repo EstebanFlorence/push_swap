@@ -11,13 +11,11 @@
                 "-Werror",
                 "-g",
                 "-Ilibft/include",
-                "-Ichecker",
-               // "*.c",
-                "checker/*.c",
+                "*.c",
 				"libft/ft_printf/*.c",
 				"libft/srcs/*.c",
                 "-o",
-                "checker"
+                "${fileDirname}/push_swap"
             ],
             "options": {
                 "cwd": "${fileDirname}"

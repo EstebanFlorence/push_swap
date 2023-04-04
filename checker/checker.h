@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/03 16:13:10 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:37:21 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void		ft_putback(t_stack **a, t_stack **b, int size, int tmpsize);
 void		sasb(t_stack **stack);
 void		rarb(t_stack **stack);
 void		rrarrb(t_stack **stack);
-void		papb(t_stack **a, t_stack **b);
+void		papb(t_stack **a, t_stack **b, char c);
 void		ss(t_stack **a, t_stack **b);
 void		rr(t_stack **a, t_stack **b);
 void		rrr(t_stack **a, t_stack **b);

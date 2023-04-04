@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/28 18:24:03 by adi-nata          #+#    #+#              #
-#    Updated: 2023/04/02 01:28:07 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/04/04 16:42:59 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,7 @@ clean:
 			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)objs ✔️"
 			@${RM} -r obj
 
-			@ echo "$(RED)Deleting $(CYAN)checker $(CLR_RMV)objs ✔️"
+			@ echo "$(RED)Deleting $(CYAN)$(BONUS) $(CLR_RMV)objs ✔️"
 			@make clean -C ./checker
 
 fclean:		clean
@@ -93,5 +93,7 @@ fclean:		clean
 			@make fclean -C ./checker
 
 re:			fclean all
+
+rebonus:	fclean all bonus
 
 .PHONY:		all clean fclean re

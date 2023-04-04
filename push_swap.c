@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:25 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/31 15:59:01 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:46:18 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ void	minisolver(t_stack **a, t_stack **b, int size)
 		ft_solve2 (a);
 	else if (size == 3)
 		ft_solve3 (a);
-	else if (size == 4)
-		ft_solve4 (a, b);
 	else if (size == 5)
 		ft_solve5 (a, b, size);
 }

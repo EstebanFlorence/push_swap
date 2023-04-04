@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 23:21:55 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/26 22:43:55 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:19:52 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,33 +45,15 @@ void	ft_solve3(t_stack **stack)
 	}
 }
 
-void	ft_solve4(t_stack **a, t_stack **b)
+int	ft_ordered(t_stack *stack)
 {
-	int	n;
-	int	x;
-	int	y;
-	int	z;
-
-	papb (a, b, 'b');
-	ft_solve3 (a);
-	while ((*a)->prev)
-		(*a) = (*a)->prev;
-	papb (b, a, 'a');
-	n = (*a)->nbr;
-	x = (*a)->next->nbr;
-	y = (*a)->next->next->nbr;
-	z = (*a)->next->next->next->nbr;
-	if (y < n && n < z)
+	while (stack->next)
 	{
-		rrarrb (a, 'a');
-		sasb (a, 'a');
-		rrarrb (a, 'a');
-		rrarrb (a, 'a');
+		if (stack->nbr > stack->next->nbr)
+			return (0);
+		stack = stack->next;
 	}
-	else if (x < n && n < y)
-		sasb (a, 'a');
-	else if (n > z)
-		rarb (a, 'a');
+	return (1);
 }
 
 void	ft_putback(t_stack **a, t_stack **b, int size, int tmpsize)
@@ -92,9 +74,10 @@ void	ft_solve5(t_stack **a, t_stack **b, int size)
 	t_stack	*tmp;
 
 	pos = 1;
-	min = 0;
 	tmpsize = size;
 	tmp = *a;
+	if (ft_ordered(*a))
+		return ;
 	while (size > 3)
 	{
 		min = ft_minimum(*a);

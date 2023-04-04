@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 16:58:22 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/03 16:14:58 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:38:35 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ t_stack	*ft_last(t_stack *stack)
 
 void	ft_freechecker(t_stack **a, t_stack **b)
 {
-	ft_freestack(*a);
+	if (*a)
+		ft_freestack(*a);
 	if (*b)
 		ft_freestack(*b);
 }
@@ -72,9 +73,9 @@ void	ft_execute(t_stack **a, t_stack **b, char *line)
 	else if (ft_strcmp(line, "rrr\n") == 0)
 		rrr(a, b);
 	else if (ft_strcmp(line, "pa\n") == 0)
-		papb(b, a);
+		papb(b, a, 'a');
 	else if (ft_strcmp(line, "pb\n") == 0)
-		papb(a, b);
+		papb(a, b, 'b');
 	else
 		ft_error(a, b);
 }

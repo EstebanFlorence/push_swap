@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 20:06:34 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/03 18:55:13 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:28:17 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ss(t_stack **a, t_stack **b)
 {
-	if (*b == NULL)
+	if (*b == NULL || *a == NULL)
 	{
 		ft_printf("KO\n");
 		ft_freechecker(a, b);
@@ -26,7 +26,7 @@ void	ss(t_stack **a, t_stack **b)
 
 void	rr(t_stack **a, t_stack **b)
 {
-	if (*b == NULL)
+	if (*b == NULL || *a == NULL)
 	{
 		ft_printf("KO\n");
 		ft_freechecker(a, b);
@@ -38,7 +38,7 @@ void	rr(t_stack **a, t_stack **b)
 
 void	rrr(t_stack **a, t_stack **b)
 {
-	if (*b == NULL)
+	if (*b == NULL || *a == NULL)
 	{
 		ft_printf("KO\n");
 		ft_freechecker(a, b);

@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/31 01:17:30 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:24:43 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,7 @@ void		ft_freestack(t_stack *stack);
 
 void		ft_solve2(t_stack **stack);
 void		ft_solve3(t_stack **stack);
-void		ft_solve4(t_stack **a, t_stack **b);
 void		ft_solve5(t_stack **a, t_stack **b, int size);
-void		ft_solve5to50(t_stack **a, t_stack **b, int size);
 
 void		ft_moves(t_stack **a, t_stack **b);
 int			movcases(int *mova, int *movb, int i);
@@ -57,6 +55,7 @@ int			ft_position2(t_stack *stack, int nbr);
 void		ft_whichalf(t_stack **a, t_stack **b, int pos, int size);
 void		ft_putback(t_stack **a, t_stack **b, int size, int tmpsize);
 void		ft_order(t_stack **stack, int size);
+int			ft_ordered(t_stack *stack);
 
 //	UTILIS
 
