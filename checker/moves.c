@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:14:19 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/04 16:38:56 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/04 23:06:37 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,8 @@ void	rrarrb(t_stack **stack)
 
 void	papb(t_stack **a, t_stack **b, char c)
 {
-	int	n;
-
-	if ((*b == NULL && c == 'a') \
-			|| (*a == NULL && c == 'b'))
-	{
-		ft_printf("KO\n");
-		ft_freechecker(a, b);
-		exit (EXIT_FAILURE);
-	}
-	n = (*a)->nbr;
-	ft_addfirstnbr(b, n);
+	if ((*a == NULL && c == 'b') || (*b == NULL && c == 'a'))
+		ft_error(a, b);
+	ft_addfirstnbr(b, (*a)->nbr);
 	ft_rmfirstnbr(a);
 }
