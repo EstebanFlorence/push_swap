@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 23:30:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/03 18:51:59 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:42:09 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_check2(int ac, char **av)
 		if (nbr < INT_MIN || nbr > INT_MAX)
 		{
 			write(2, "Error\n", 6);
-			ft_printf("Some arguments are bigger or less than an integer\n");
+			ft_printf("Some arguments are bigger or smaller than an integer\n");
 			return (0);
 		}
 		i++;
