@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/28 18:24:03 by adi-nata          #+#    #+#              #
-#    Updated: 2023/04/02 01:28:07 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/04/29 15:13:24 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,11 +56,7 @@ ${NAME}:	objs ${OBJS}
 
 all:		${NAME}
 
-bonus:
-
-			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(LIB) ${CLR_RMV}..."
-			@make -C ./libft
-			@echo "$(GREEN)$(LIB) created[0m ✔️"
+bonus:		${NAME}
 
 			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(BONUS) ${CLR_RMV}..."
 			@make -C ./checker

@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 19:08:25 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/03 18:58:29 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/29 15:18:25 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_read(t_stack **a, t_stack **b)
 	{
 		ft_printf("KO\n");
 		ft_freechecker(a, b);
-		exit (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 }
 

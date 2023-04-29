@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 23:21:55 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/26 22:43:55 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/04/29 15:23:27 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,33 +45,22 @@ void	ft_solve3(t_stack **stack)
 	}
 }
 
-void	ft_solve4(t_stack **a, t_stack **b)
+int	ft_ordered(t_stack **a, t_stack **b)
 {
-	int	n;
-	int	x;
-	int	y;
-	int	z;
+	t_stack	*tmp;
 
-	papb (a, b, 'b');
-	ft_solve3 (a);
-	while ((*a)->prev)
-		(*a) = (*a)->prev;
-	papb (b, a, 'a');
-	n = (*a)->nbr;
-	x = (*a)->next->nbr;
-	y = (*a)->next->next->nbr;
-	z = (*a)->next->next->next->nbr;
-	if (y < n && n < z)
+	tmp = *a;
+	if (*b)
+		return (0);
+	while (tmp->next)
 	{
-		rrarrb (a, 'a');
-		sasb (a, 'a');
-		rrarrb (a, 'a');
-		rrarrb (a, 'a');
+		if (tmp->nbr > tmp->next->nbr)
+			return (0);
+		tmp = tmp->next;
 	}
-	else if (x < n && n < y)
-		sasb (a, 'a');
-	else if (n > z)
-		rarb (a, 'a');
+	ft_printf("OK\n");
+	ft_freestack(*a);
+	exit (EXIT_SUCCESS);
 }
 
 void	ft_putback(t_stack **a, t_stack **b, int size, int tmpsize)
@@ -91,6 +80,7 @@ void	ft_solve5(t_stack **a, t_stack **b, int size)
 	int		tmpsize;
 	t_stack	*tmp;
 
+	ft_ordered(a, b);
 	pos = 1;
 	min = 0;
 	tmpsize = size;
