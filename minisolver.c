@@ -6,11 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 23:21:55 by adi-nata          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2023/04/29 15:23:27 by adi-nata         ###   ########.fr       */
-=======
-/*   Updated: 2023/04/04 16:19:52 by adi-nata         ###   ########.fr       */
->>>>>>> 45a63a5f4ca167a78e5186ad602bb5bd2151099f
+/*   Updated: 2023/04/29 16:02:31 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +45,6 @@ void	ft_solve3(t_stack **stack)
 	}
 }
 
-<<<<<<< HEAD
 int	ft_ordered(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
@@ -66,17 +61,6 @@ int	ft_ordered(t_stack **a, t_stack **b)
 	ft_printf("OK\n");
 	ft_freestack(*a);
 	exit (EXIT_SUCCESS);
-=======
-int	ft_ordered(t_stack *stack)
-{
-	while (stack->next)
-	{
-		if (stack->nbr > stack->next->nbr)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
->>>>>>> 45a63a5f4ca167a78e5186ad602bb5bd2151099f
 }
 
 void	ft_putback(t_stack **a, t_stack **b, int size, int tmpsize)
@@ -100,8 +84,6 @@ void	ft_solve5(t_stack **a, t_stack **b, int size)
 	pos = 1;
 	tmpsize = size;
 	tmp = *a;
-	if (ft_ordered(*a))
-		return ;
 	while (size > 3)
 	{
 		min = ft_minimum(*a);
