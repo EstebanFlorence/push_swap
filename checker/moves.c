@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:14:19 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/04 23:06:37 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:37:49 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sasb(t_stack **stack)
 {
 	int	swap;
 
-	if (stack == NULL || (*stack)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
 	swap = (*stack)->nbr;
 	(*stack)->nbr = (*stack)->next->nbr;
@@ -62,10 +62,10 @@ void	rrarrb(t_stack **stack)
 	(*stack) = rot;
 }
 
-void	papb(t_stack **a, t_stack **b, char c)
+void	papb(t_stack **a, t_stack **b, char *line)
 {
-	if ((*a == NULL && c == 'b') || (*b == NULL && c == 'a'))
-		ft_error(a, b);
+	if (*a == NULL)
+		ft_error(a, b, line);
 	ft_addfirstnbr(b, (*a)->nbr);
 	ft_rmfirstnbr(a);
 }

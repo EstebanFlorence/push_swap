@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:42:28 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/04 22:52:38 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:37:25 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_lis
 t_stack		*ft_last(t_stack *stack);
 void		ft_freechecker(t_stack **a, t_stack **b);
 int			ft_ordered(t_stack **a, t_stack **b);
-void		ft_error(t_stack **a, t_stack **b);
+void		ft_error(t_stack **a, t_stack **b, char *line);
 void		ft_execute(t_stack **a, t_stack **b, char *line);
 void		ft_read(t_stack **a, t_stack **b);
 int			ft_check1(int ac, char **av);
@@ -47,9 +47,9 @@ void		ft_putback(t_stack **a, t_stack **b, int size, int tmpsize);
 void		sasb(t_stack **stack);
 void		rarb(t_stack **stack);
 void		rrarrb(t_stack **stack);
-void		papb(t_stack **a, t_stack **b, char c);
-void		ss(t_stack **a, t_stack **b);
-void		rr(t_stack **a, t_stack **b);
-void		rrr(t_stack **a, t_stack **b);
+void		papb(t_stack **a, t_stack **b, char *line);
+void		ss(t_stack **a, t_stack **b, char *line);
+void		rr(t_stack **a, t_stack **b, char *line);
+void		rrr(t_stack **a, t_stack **b, char *line);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:05:06 by adi-nata          #+#    #+#             */
-/*   Updated: 2022/12/27 00:55:09 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/05/29 19:00:58 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 
 	i = 0;
 	n = ft_strlen(s);
-	d = (char *)malloc(sizeof(char) * (len + 1));
+	d = ft_calloc(sizeof(char), (len + 1));
 	if (!d)
 		return (NULL);
 	while (i < len && i + start < n)

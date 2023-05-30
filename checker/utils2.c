@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 16:58:22 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/04 22:52:28 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:37:47 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,13 @@ int	ft_ordered(t_stack **a, t_stack **b)
 	exit (EXIT_SUCCESS);
 }
 
-void	ft_error(t_stack **a, t_stack **b)
+void	ft_error(t_stack **a, t_stack **b, char *line)
 {
 	ft_printf("KO\n");
 	ft_freechecker(a, b);
+	if (line)
+		free(line);
+	get_next_line(-42);
 	exit(EXIT_FAILURE);
 }
 
@@ -59,23 +62,23 @@ void	ft_execute(t_stack **a, t_stack **b, char *line)
 	else if (ft_strcmp(line, "sb\n") == 0)
 		sasb(b);
 	else if (ft_strcmp(line, "ss\n") == 0)
-		ss(a, b);
+		ss(a, b, line);
 	else if (ft_strcmp(line, "ra\n") == 0)
 		rarb(a);
 	else if (ft_strcmp(line, "rb\n") == 0)
 		rarb(b);
 	else if (ft_strcmp(line, "rr\n") == 0)
-		rr(a, b);
+		rr(a, b, line);
 	else if (ft_strcmp(line, "rra\n") == 0)
 		rrarrb(a);
 	else if (ft_strcmp(line, "rrb\n") == 0)
 		rrarrb(b);
 	else if (ft_strcmp(line, "rrr\n") == 0)
-		rrr(a, b);
+		rrr(a, b, line);
 	else if (ft_strcmp(line, "pa\n") == 0)
-		papb(b, a, 'a');
+		papb(b, a, line);
 	else if (ft_strcmp(line, "pb\n") == 0)
-		papb(a, b, 'b');
+		papb(a, b, line);
 	else
-		ft_error(a, b);
+		ft_error(a, b, line);
 }

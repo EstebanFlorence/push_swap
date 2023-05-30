@@ -6,11 +6,18 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 17:22:40 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/03/08 17:57:03 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/05/29 19:19:26 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	*ft_freegnl(char **stat)
+{
+	free (*stat);
+	*stat = NULL;
+	return (NULL);
+}
 
 char	*get_next_line(int fd)
 {
@@ -18,16 +25,15 @@ char	*get_next_line(int fd)
 	char			*buffer;
 	char			*line;
 
-	if (fd < 0 || BUFFER_SIZE < 0 || read(fd, &buffer, 0) < 0)
-		return (NULL);
-	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buffer)
+	if (fd == -42)
+		return (ft_freegnl(&stat));
+	if (fd < 0 || BUFFER_SIZE < 0 || read(fd, 0, 0) < 0)
 		return (NULL);
 	if (!stat)
-	{
-		stat = (char *)malloc(1);
-		stat[0] = '\0';
-	}
+		stat = ft_calloc(sizeof(char), 1);
+	buffer = ft_calloc(sizeof(char), (BUFFER_SIZE + 1));
+	if (!buffer)
+		return (NULL);
 	line = zeline(fd, &stat, buffer);
 	if (line == NULL)
 	{
@@ -50,7 +56,6 @@ char	*zeline(int fd, char **stat, char *buffer)
 		bytesread = read(fd, buffer, BUFFER_SIZE);
 		if (bytesread == -1)
 			return (NULL);
-		buffer[bytesread] = '\0';
 		tmpstat = *stat;
 		*stat = ft_strjoin(tmpstat, buffer);
 		free (tmpstat);

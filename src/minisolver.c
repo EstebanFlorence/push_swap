@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 23:21:55 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/29 16:02:31 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/05/29 19:57:45 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int	ft_ordered(t_stack **a, t_stack **b)
 			return (0);
 		tmp = tmp->next;
 	}
-	ft_printf("OK\n");
 	ft_freestack(*a);
 	exit (EXIT_SUCCESS);
 }

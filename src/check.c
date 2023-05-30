@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 23:30:43 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/04/04 16:42:09 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/05/29 20:08:05 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ int	ft_check1(int ac, char **av)
 	{
 		while (av[i][j])
 		{
-			if (!ft_isdigit(av[i][j]) && \
-				(av[i][j] != '+' && av[i][j] != '-'))
+			if (av[i][j] == '+' || av[i][j] == '-')
+				j++;
+			if (!ft_isdigit(av[i][j]))
 			{
 				write(2, "Error\n", 6);
 				ft_printf("Some arguments aren’t integers\n");
